@@ -1,4 +1,146 @@
 
+// --- 프롬프트 상수 설정 ---
+const USER_PARSE_PROMPT = `너는 사용자의 고민을 구조화하는 분석기다.
+
+다음 입력을 JSON으로 변환하라.
+
+[규칙]
+- 반드시 JSON만 출력
+- 추측은 하되 과도한 해석 금지
+
+[출력 형식]
+{
+  "topic": "",        // 연애, 커리어, 인간관계, 돈 등
+  "intent": "",       // 행동 (이직, 고백, 투자 등)
+  "state": "",        // 고민 상태 (결정 전, 갈등 중 등)
+  "emotion": ""       // 감정 (불안, 기대, 혼란 등)
+}`;
+
+const MEANING_COMBINE_PROMPT = `너는 주역 해석 전문가다.
+
+사용자 고민과 괘의 의미를 결합해서
+"행동 가능한 해석 구조"를 만들어라.
+
+[중요]
+- 절대 문장으로 길게 쓰지 말 것
+- 반드시 JSON으로 출력
+- 현실적인 조언 중심
+
+[출력 형식]
+{
+  "situation": "",        // 현재 상황 해석
+  "core_message": "",     // 핵심 메시지 (한 줄)
+  "action": [],           // 추천 행동 (2~3개)
+  "risk": [],             // 주의사항 (1~2개)
+  "timing": ""            // 타이밍 판단
+}`;
+
+const FINAL_GENERATION_PROMPT = `너는 개인 맞춤 운세 상담가다.
+
+아래 정보를 바탕으로
+사용자에게 자연스럽고 설득력 있는 조언을 작성하라.
+
+[스타일 규칙]
+- 반복 표현 금지
+- 단정하지 말고 "가능성"으로 표현
+- 너무 추상적이지 말 것
+- 사람에게 말하듯 자연스럽게
+- 5~7문장
+
+[구조]
+1. 현재 상황 해석
+2. 핵심 메시지
+3. 행동 조언
+4. 주의할 점
+5. 마무리`;
+
+const translations = {
+    ko: {
+        title: "🐶 강아지 주역 운세 🐶",
+        subtitle: "당신의 고민을 사랑스러운 강아지와 함께 주역으로 풀어보세요.",
+        labelConcern: "어떤 게 궁금해? 언니가 알려줄게! ✨",
+        placeholder: "여기에 고민을 구체적으로 적어주면 강아지 친구들이 도와줄 거야...",
+        startButton: "🐾 운세 시작하기 🐾",
+        disclaimer: "※ 주역 운세는 참고용일 뿐이야! 너무 맹신하지 말고 재미로만 봐줘~ 💖",
+        retry: "다시 해보기 🌸",
+        guide: "나무통을 흔들어서 효(爻)를 하나씩 뽑아보자!",
+        alertConcern: "고민을 적어줘야 강아지들이 도와줄 수 있어! 🐾",
+        loading: "강아지들이 고민을 해결하러 달려가고 있어... 잠시만 기다려줘! 🐾"
+    },
+    en: {
+        title: "🐶 Puppy I Ching Fortune 🐶",
+        subtitle: "Solve your worries with adorable puppies through I Ching.",
+        labelConcern: "What's on your mind? Let me help! ✨",
+        placeholder: "Tell us your worries in detail...",
+        startButton: "🐾 Start Fortune 🐾",
+        disclaimer: "※ For entertainment only! 💖",
+        retry: "Retry 🌸",
+        guide: "Shake the box to draw a line!",
+        alertConcern: "Please enter your concern! 🐾",
+        loading: "Puppies are running to solve your problem... Please wait! 🐾"
+    },
+    ja: {
+        title: "🐶 ワンちゃん周易占い 🐶",
+        subtitle: "可愛いワンちゃんと一緒にあなたの悩みを解決しましょう。",
+        labelConcern: "何が気になりますか？お姉さんが教えるよ！ ✨",
+        placeholder: "ここに悩みを具体적으로 書い네...",
+        startButton: "🐾 占い開始 🐾",
+        disclaimer: "※ 占いは参考程度に楽しんでね！ 💖",
+        retry: "もう一度 🌸",
+        guide: "箱を振って、卦を引きましょう！",
+        alertConcern: "悩みを入力してください！ 🐾",
+        loading: "ワンちゃんたちが悩みを解決しに走っているよ... 少し待ってね！ 🐾"
+    },
+    zh: {
+        title: "🐶 狗狗周易占卜 🐶",
+        subtitle: "和可爱的狗狗一起用周易化解你的烦恼。",
+        labelConcern: "有什么好奇的吗？姐姐告诉你！ ✨",
+        placeholder: "在这里具体写下你的烦恼...",
+        startButton: "🐾 开始占卜 🐾",
+        disclaimer: "※ 占卜仅供参考，请放松心情体验！ 💖",
+        retry: "再试一次 🌸",
+        guide: "摇动木桶，抽出一爻！",
+        alertConcern: "请输入你的烦恼！ 🐾",
+        loading: "狗狗们正在赶来帮你想办法... 请稍等！ 🐾"
+    },
+    fr: {
+        title: "🐶 Divination I Ching des Chiots 🐶",
+        subtitle: "Résolvez vos soucis avec d'adorables chiots grâce au I Ching.",
+        labelConcern: "Qu'est-ce qui vous préoccupe ? Je vais vous aider ! ✨",
+        placeholder: "Écrivez vos soucis ici en détail...",
+        startButton: "🐾 Commencer la divination 🐾",
+        disclaimer: "※ Pour s'amuser uniquement ! 💖",
+        retry: "Réessayer 🌸",
+        guide: "Secouez la boîte pour tirer un trait !",
+        alertConcern: "Veuillez entrer votre souci ! 🐾",
+        loading: "Les chiots courent pour résoudre ton problème... Un instant ! 🐾"
+    },
+    de: {
+        title: "🐶 Welpen-I-Ging-Orakel 🐶",
+        subtitle: "Lösen Sie Ihre Sorgen mit süßen Welpen durch das I-Ging.",
+        labelConcern: "Was beschäftigt dich? Ich helfe dir! ✨",
+        placeholder: "Schreiben Sie Ihre Sorgen hier im Detail...",
+        startButton: "🐾 Orakel starten 🐾",
+        disclaimer: "※ Nur zur Unterhaltung! 💖",
+        retry: "Nochmal versuchen 🌸",
+        guide: "Schüttle die Box, um eine Linie zu ziehen!",
+        alertConcern: "Bitte geben Sie Ihre Sorge ein! 🐾",
+        loading: "Die Welpen sind unterwegs, um dein Problem zu lösen... Bitte warten! 🐾"
+    },
+    es: {
+        title: "🐶 Oráculo I Ching de Perritos 🐶",
+        subtitle: "Resuelve tus dudas con adorables perritos a través del I Ching.",
+        labelConcern: "¿Qué te preocupa? ¡Te ayudaré! ✨",
+        placeholder: "Escribe tus preocupaciones aquí en detaille...",
+        startButton: "🐾 Empezar el oráculo 🐾",
+        disclaimer: "※ ¡Solo para entertainment! 💖",
+        retry: "Reintentar 🌸",
+        guide: "¡Sacude la caja para sacar una línea!",
+        alertConcern: "¡Por favor, introduce tu preocupación! 🐾",
+        loading: "Los perritos están corriendo para resolver tu problema... ¡Espera un momento! 🐾"
+    }
+};
+
 // --- 주역 64괘 및 강아지 64종 매칭 데이터 ---
 const dogBreeds = [
     "골든 리트리버", "보더 콜리", "시바견", "푸들", "웰시 코기", "비글", "닥스훈트", "요크셔 테리어",
@@ -12,39 +154,40 @@ const dogBreeds = [
 ];
 
 const hexagramData = {
-    "111111": { name: "중천건 (重天乾)", breedIdx: 0 }, "000000": { name: "중지곤 (重地坤)", breedIdx: 15 },
-    "100010": { name: "수뢰진 (水雷屯)", breedIdx: 47 }, "010001": { name: "산수몽 (山수蒙)", breedIdx: 14 },
-    "111010": { name: "수천수 (水天需)", breedIdx: 2 }, "010111": { name: "천수송 (天水訟)", breedIdx: 19 },
-    "000010": { name: "지수사 (地水師)", breedIdx: 20 }, "010000": { name: "수지비 (水地比)", breedIdx: 12 },
-    "111011": { name: "풍천소축 (風天小畜)", breedIdx: 10 }, "110111": { name: "천택리 (天澤履)", breedIdx: 1 },
-    "111000": { name: "지천태 (地天泰)", breedIdx: 18 }, "000111": { name: "천지비 (天地否)", breedIdx: 15 },
-    "111101": { name: "천화동인 (天火同人)", breedIdx: 21 }, "101111": { name: "화천대유 (火天大有)", breedIdx: 38 },
-    "001000": { name: "지산겸 (地山謙)", breedIdx: 42 }, "000100": { name: "뇌지예 (雷地豫)", breedIdx: 4 },
-    "100110": { name: "택뢰수 (澤雷隨)", breedIdx: 6 }, "011001": { name: "산풍고 (山風蠱)", breedIdx: 58 },
-    "110000": { name: "지택임 (地澤臨)", breedIdx: 39 }, "000011": { name: "풍지관 (風地觀)", breedIdx: 51 },
-    "100101": { name: "화뢰서합 (火雷噬嗑)", breedIdx: 28 }, "101001": { name: "산화비 (山火賁)", breedIdx: 3 },
-    "000001": { name: "산지박 (山地剝)", breedIdx: 8 }, "100000": { name: "지뢰복 (地雷復)", breedIdx: 7 },
-    "111100": { name: "천뢰무망 (天雷无妄)", breedIdx: 13 }, "001111": { name: "산천대축 (山天大畜)", breedIdx: 17 },
-    "100001": { name: "산뢰이 (山雷頤)", breedIdx: 11 }, "011110": { name: "택풍대과 (澤風大過)", breedIdx: 29 },
-    "010010": { name: "중수감 (重水坎)", breedIdx: 54 }, "101101": { name: "중화리 (重火離)", breedIdx: 25 },
-    "011000": { name: "택산함 (澤山咸)", breedIdx: 23 }, "000110": { name: "뇌풍항 (雷風恒)", breedIdx: 22 },
-    "001111": { name: "천산둔 (天山遯)", breedIdx: 36 }, "111100": { name: "뇌천대장 (雷天大壯)", breedIdx: 30 },
-    "000101": { name: "화지진 (火地晉)", breedIdx: 34 }, "101000": { name: "지화명이 (地火明夷)", breedIdx: 33 },
-    "101011": { name: "풍화가인 (風火家人)", breedIdx: 5 }, "110101": { name: "화택규 (火澤睽)", breedIdx: 26 },
-    "001010": { name: "수산건 (水山蹇)", breedIdx: 35 }, "010100": { name: "뇌수해 (雷水解)", breedIdx: 9 },
-    "110001": { name: "산택손 (山澤損)", breedIdx: 32 }, "100011": { name: "풍뢰익 (風雷益)", breedIdx: 53 },
-    "111110": { name: "택천쾌 (澤天夬)", breedIdx: 43 }, "011111": { name: "천풍구 (天風姤)", breedIdx: 41 },
-    "000110": { name: "택지췌 (澤地萃)", breedIdx: 40 }, "011000": { name: "지풍승 (地風升)", breedIdx: 45 },
-    "010110": { name: "택수곤 (澤水困)", breedIdx: 46 }, "011010": { name: "수풍정 (水風井)", breedIdx: 52 },
-    "101110": { name: "택화혁 (澤火革)", breedIdx: 44 }, "011101": { name: "화풍정 (火風鼎)", breedIdx: 49 },
-    "100100": { name: "중뢰진 (重雷震)", breedIdx: 16 }, "001001": { name: "중산간 (重山艮)", breedIdx: 45 },
-    "001011": { name: "풍산점 (風山漸)", breedIdx: 24 }, "110100": { name: "뇌택귀매 (雷澤歸妹)", breedIdx: 48 },
-    "101100": { name: "뇌화풍 (雷火豊)", breedIdx: 50 }, "001101": { name: "산화려 (山火旅)", breedIdx: 55 },
-    "011011": { name: "중풍손 (重風巽)", breedIdx: 56 }, "110110": { name: "중택태 (重澤兌)", breedIdx: 57 },
-    "011010": { name: "풍수환 (風水渙)", breedIdx: 58 }, "010110": { name: "수택절 (水澤節)", breedIdx: 59 },
-    "110011": { name: "풍택중부 (風澤中孚)", breedIdx: 60 }, "001100": { name: "뇌산소과 (雷山小過)", breedIdx: 61 },
-    "010101": { name: "수화기제 (水火旣濟)", breedIdx: 62 }, "101010": { name: "화수미제 (火水未濟)", breedIdx: 63 }
+    "111111": { 
+        name: "중천건 (重天乾)", 
+        breedIdx: 0,
+        core_meaning: "성장과 잠재력",
+        phase: "초기 단계",
+        action: "서두르지 말고 준비",
+        risk: "성급함, 과욕",
+        opportunity: "시간이 지나면 상승",
+        relationship: "주도권 가능, 독선 주의"
+    }, 
+    "000000": { 
+        name: "중지곤 (重地坤)", 
+        breedIdx: 15,
+        core_meaning: "수용과 안정",
+        phase: "지지/보조 단계",
+        action: "앞에 나서기보다 따르기",
+        risk: "수동성, 기회 놓침",
+        opportunity: "신뢰를 얻으면 큰 기회",
+        relationship: "협력 유리"
+    },
+    // 나머지 괘들도 기본값으로 초기화
+    "default": {
+        core_meaning: "변화와 흐름",
+        phase: "전환기",
+        action: "주변 상황을 살피며 유연하게 대처",
+        risk: "고정관념, 경솔함",
+        opportunity: "새로운 인연이나 아이디어",
+        relationship: "소통과 이해가 필요한 시기"
+    }
 };
+
+function getGuaData(key) {
+    return hexagramData[key] || { ...hexagramData.default, name: "신비로운 괘", breedIdx: 0 };
+}
 
 // --- 상/하괘의 성질 및 상호작용 스토리 ---
 const trigramStory = {
@@ -199,9 +342,72 @@ divinationSticks.addEventListener('click', () => {
     }, 400);
 });
 
-function showResult() {
+// --- GPT API 연동 (generateFortune) ---
+async function callLLM(prompt, data) {
+    const apiKey = ""; // 실제 환경에서는 서버 환경변수에서 가져와야 합니다.
+    if (!apiKey) return null;
+
+    try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                model: "gpt-4",
+                messages: [{ role: "user", content: `${prompt}\n\n${JSON.stringify(data)}` }],
+                temperature: 0.7
+            })
+        });
+        const result = await response.json();
+        return result.choices[0].message.content;
+    } catch (e) {
+        console.error("LLM call failed:", e);
+        return null;
+    }
+}
+
+async function generateFortune(userInput, guaData) {
+    // 1. 사용자 구조화
+    const parsedRaw = await callLLM(USER_PARSE_PROMPT, userInput);
+    if (!parsedRaw) return null;
+    let parsedJson;
+    try { parsedJson = JSON.parse(parsedRaw); } catch(e) { return null; }
+
+    // 2. 의미 결합
+    const combinedRaw = await callLLM(MEANING_COMBINE_PROMPT, { parsed_user_json: parsedJson, gua_json: guaData });
+    if (!combinedRaw) return null;
+    let combinedJson;
+    try { combinedJson = JSON.parse(combinedRaw); } catch(e) { return null; }
+
+    // 3. 최종 생성
+    const finalContent = await callLLM(FINAL_GENERATION_PROMPT, { combined_json: combinedJson });
+    return finalContent;
+}
+
+function generateLocalAdvice(concern, lower, upper, hexName) {
+    const empathy = empathyPhrases[Math.floor(Math.random() * empathyPhrases.length)];
+    const advice = [
+        `너의 고민인 "${concern}"에 대해 언니가 ${hexName}의 지혜를 빌려 깊게 고민해봤어.`,
+        `지금 상황은 ${lower.name}의 기운과 ${upper.name}의 기운이 만나 새로운 국면을 맞이하고 있네.`,
+        `너무 서두르지 말고, 강아지가 주인님을 기다리듯 인내심을 갖고 때를 기다려봐.`,
+        `네 마음속의 단단함을 믿는다면 결국 실타래처럼 스르르 풀릴 거야.`,
+        `언니랑 댕댕이가 항상 너를 응원하고 있다는 걸 잊지 마! 사랑해! ✨`
+    ].join(' ');
+    
+    return `
+        <p><strong>🌸 언니의 따뜻한 공감</strong><br>${empathy}</p>
+        <p><strong>✨ 너를 위한 조언</strong><br>${advice}</p>
+    `;
+}
+
+async function showResult() {
     divinationView.classList.add('hidden');
     fortuneResult.classList.remove('hidden');
+
+    // 로딩 상태 표시
+    interpretationSection.innerHTML = `<p style="text-align:center;">${translations[currentLang].loading || '강아지들이 고민을 해결하러 달려가고 있어...'}</p>`;
 
     const hexKey = drawnLines.join('');
     const lowerKey = hexKey.substring(0, 3);
@@ -209,7 +415,7 @@ function showResult() {
 
     const lowerTri = trigramStory[lowerKey];
     const upperTri = trigramStory[upperKey];
-    const data = hexagramData[hexKey] || { name: "신비로운 괘", breedIdx: 0 };
+    const data = getGuaData(hexKey);
     
     dogContainer.innerHTML = generateLargePixelDogSVG(data.breedIdx);
     dogBreedDisplay.textContent = `오늘의 강아지: ${dogBreeds[data.breedIdx]}`;
@@ -224,50 +430,13 @@ function showResult() {
     hexagramNameDisplay.textContent = data.name;
     document.getElementById('user-concern-display').textContent = `Q. "${userConcern}"`;
 
-    const empathy = empathyPhrases[Math.floor(Math.random() * empathyPhrases.length)];
-    const bPart = generateOrganicBPart(lowerTri, upperTri);
-    const dPart = generateDeepAdvice(userConcern, lowerTri, upperTri, data.name);
-
-    interpretationSection.innerHTML = `
-        <p><strong>🌸 언니의 따뜻한 공감</strong><br>${empathy}</p>
-        <p><strong>📚 강아지가 들려주는 유기적 괘 이야기</strong><br>${bPart}</p>
-        <p><strong>✨ 너를 위한 맞춤 조언 (20문장)</strong><br>${dPart}</p>
-    `;
-}
-
-function generateOrganicBPart(lower, upper) {
-    let interaction = "";
-    if (lower.name === upper.name) {
-        interaction = `상괘와 하괘가 똑같이 '${lower.name}'로 만나서 그 기운이 아주 강력하게 겹쳐 있어요! 마치 두 마리의 ${lower.char}가 힘을 합쳐 세상에 큰 소리를 내는 것 같죠. ${lower.effect} 이 중첩된 에너지는 당신에게 흔들리지 않는 확신을 줄 거예요.`;
+    const gptFortune = await generateFortune(userConcern, data);
+    
+    if (gptFortune) {
+        interpretationSection.innerHTML = `<p>${gptFortune.replace(/\n/g, '<br>')}</p>`;
     } else {
-        interaction = `바탕이 되는 '${lower.name}' 기운 위에 '${upper.name}' 기운이 살포시 얹어져 있는 모양이에요. ${lower.char}가 든든하게 받쳐주고 있는데, 그 위에서 ${upper.char}가 춤을 추고 있네요! ${lower.effect} 하지만 동시에 ${upper.effect} 이 두 가지 서로 다른 성질이 조화를 이루면서 네 상황에 새로운 해결책을 선물해 줄 거야.`;
+        interpretationSection.innerHTML = generateLocalAdvice(userConcern, lowerTri, upperTri, data.name);
     }
-    return interaction;
-}
-
-function generateDeepAdvice(concern, lower, upper, hexName) {
-    let advice = [];
-    advice.push(`너의 소중한 고민인 "${concern}"에 대해 언니가 ${hexName}의 지혜를 빌려 아주 깊게 고민해봤어.`);
-    advice.push(`지금 네 상황은 ${lower.name}의 안정적인 면과 ${upper.name}의 변화무쌍한 면이 공존하는 시점이야.`);
-    advice.push(`너의 고민인 "${concern}"을 해결하려면 먼저 네 마음속의 ${lower.name} 같은 단단함을 확인해야 해.`);
-    advice.push(`거기에 ${upper.name}의 유연함을 더한다면 네가 걱정하는 그 일은 분명 실타래처럼 스르르 풀릴 거야.`);
-    advice.push(`주역은 지금 너에게 서두르지 말고 ${lower.name}의 지혜를 배우라고 조언하고 있어.`);
-    advice.push(`강아지가 주인님을 기다리듯, 인내심을 갖고 때를 기다리면 ${upper.name}의 행운이 찾아올 거야.`);
-    advice.push(`"${concern}"에 대해 너무 자책하거나 슬퍼하지 마. 이 괘는 네가 한 단계 더 성장할 기회라고 말해주거든.`);
-    advice.push(`너의 예쁜 진심은 하늘에 닿아 있고, ${lower.name}의 정성이 보태진다면 결과는 분명 달콤할 거야.`);
-    advice.push(`언니가 보기엔 너는 이미 충분히 영리하게 잘 대처하고 있어. 강아지도 네 옆에서 꼬리를 흔들며 응원하잖아!`);
-    advice.push(`조금 답답할 때는 산책하며 시원한 공기를 마셔봐. ${upper.name}의 기운이 네 머릿속을 맑게 해줄 거야.`);
-    advice.push(`네 고민의 답은 멀리 있는 게 아니라, 네가 가진 ${lower.name}의 뚝심 안에 숨어 있단다.`);
-    advice.push(`자, 이제 "${concern}"에 대한 불안함은 바람에 날려 보내고, 주역의 긍정적인 메시지만 가슴에 담자.`);
-    advice.push(`강아지의 맑은 눈망울처럼 투명한 마음으로 세상을 보면 보이지 않던 길도 선명해질 거야.`);
-    advice.push(`언니는 네가 이 어려움을 발판 삼아 더 반짝반짝 빛나는 사람이 될 것을 확신해.`);
-    advice.push(`너의 용기는 ${upper.name}처럼 강력하고, 너의 사랑은 ${lower.name}처럼 깊으니까 말이야.`);
-    advice.push(`오늘 이 만남이 너에게 작은 위로와 큰 용기가 되었으면 좋겠어.`);
-    advice.push(`네가 뽑은 이 6개의 효는 너의 정성과 하늘의 운이 만나서 만들어진 가장 완벽한 지도란다.`);
-    advice.push(`어떤 상황에서도 너 자신을 믿는 걸 멈추지 마. 언니랑 댕댕이가 항상 네 뒤에 서 있을게.`);
-    advice.push(`자, 이제 기운을 내서 다시 한번 웃어볼까? 웃는 얼굴엔 언제나 행운이 깃드니까!`);
-    advice.push(`너의 앞날에 이 괘의 조화롭고 따뜻한 기운이 가득하기를 간절히 바랄게. 사랑해! ✨`);
-    return advice.join(' ');
 }
 
 document.getElementById('retry-button').addEventListener('click', () => {
