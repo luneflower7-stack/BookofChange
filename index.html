@@ -3,41 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강아지 주역 운세</title>
+    <title>강아지 주역 운세 🐶</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="language-switcher">
+        <select id="lang-select">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="zh">中文</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
     <div class="container">
         <header>
-            <h1>🐶 강아지 주역 운세 🐶</h1>
-            <p class="description">당신의 고민을 사랑스러운 강아지와 함께 주역으로 풀어보세요.</p>
+            <h1 id="title">🐶 강아지 주역 운세 🐶</h1>
+            <p id="subtitle" class="description">당신의 고민을 사랑스러운 강아지와 함께 주역으로 풀어보세요.</p>
         </header>
         
         <main>
-            <div class="input-section">
-                <label for="concern-input">당신의 고민은 무엇인가요?</label>
-                <textarea id="concern-input" placeholder="여기에 고민을 구체적으로 적어주세요... (예: 새로 시작하려는 프로젝트, 잘 될까요?)"></textarea>
+            <div id="input-view">
+                <div class="input-section">
+                    <label id="label-concern" for="concern-input">당신의 고민은 무엇인가요?</label>
+                    <textarea id="concern-input" placeholder="여기에 고민을 구체적으로 적어주세요..."></textarea>
+                </div>
+                <button id="start-button">🐾 운세 시작하기 🐾</button>
             </div>
 
-            <button id="fortune-button">운세 확인하기</button>
+            <div id="divination-view" class="hidden">
+                <div id="divination-sticks-container">
+                    <div class="sticks-box">
+                        <div class="stick"></div>
+                        <div class="stick"></div>
+                        <div class="stick"></div>
+                        <div class="stick"></div>
+                        <div class="stick"></div>
+                    </div>
+                </div>
+                <p id="divination-guide">산통을 클릭하여 효(爻)를 하나씩 뽑아주세요. (0/6)</p>
+                <div id="drawn-lines-container">
+                    <!-- 효가 아래에서 위로 쌓입니다 -->
+                </div>
+            </div>
 
             <div id="fortune-result" class="hidden">
                 <div class="result-card">
                     <div id="user-concern-display" class="user-concern"></div>
-                    <div class="dog-display">
-                        <img id="dog-image" src="" alt="강아지">
+                    <div class="dog-display" id="dog-pixel-art-container">
+                        <!-- 픽셀 아트 강아지 SVG가 들어갑니다 -->
                     </div>
-                    <div id="hexagram-symbol" class="pixel-art-symbol"></div>
                     <h2 id="hexagram-name"></h2>
-                    <div id="hexagram-interpretation" class="interpretation-section">
-                        <!-- 해석 내용이 A, B, C, D 구조로 들어갑니다 -->
-                    </div>
+                    <div id="hexagram-display-final"></div>
+                    <div id="hexagram-interpretation" class="interpretation-section"></div>
+                    <button id="retry-button">다시 하기</button>
                 </div>
             </div>
         </main>
         
         <footer class="disclaimer">
-            <p>※ 주역 운세는 참고용일 뿐입니다. 너무 맹신하지 마시고 가벼운 마음으로 즐겨주세요.</p>
+            <p id="disclaimer-text">※ 주역 운세는 참고용일 뿐입니다. 너무 맹신하지 마시고 가벼운 마음으로 즐겨주세요.</p>
         </footer>
     </div>
     <script src="main.js"></script>
