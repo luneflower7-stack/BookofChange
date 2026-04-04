@@ -137,19 +137,32 @@ body {
     100% { transform: translateX(-50%) translateY(-160px) rotate(5deg); opacity: 0; }
 }
 
+#divination-view {
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #drawn-lines-container {
-    display: flex; flex-direction: column-reverse;
-    gap: 12px; align-items: center; margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 12px;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .yao-line {
     width: 160px; height: 18px; border-radius: 9px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
 }
 
 .yao-yang { background-color: #ff4d6d; }
 .yao-yin {
-    background: repeating-linear-gradient(to right, #ff758f 0, #ff758f 65px, transparent 65px, transparent 95px, #ff758f 95px, #ff758f 160px);
+    background: linear-gradient(to right, #ff758f 45%, transparent 45%, transparent 55%, #ff758f 55%);
 }
 
 /* 결과 강아지 256px */
@@ -173,6 +186,9 @@ body {
 }
 
 .mini-yao { width: 100px; height: 12px; border-radius: 6px; }
+.mini-yao.yao-yin {
+    background: linear-gradient(to right, #ff758f 42%, transparent 42%, transparent 58%, #ff758f 58%);
+}
 
 .interpretation-section { text-align: left; font-size: 1.15em; line-height: 1.9; }
 .interpretation-section p { margin-bottom: 30px; }
