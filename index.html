@@ -1,14 +1,22 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 주역 운세</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <div class="container">
+        <h1>오늘의 주역 운세</h1>
+        <p class="description">주역은 고대 중국에서 유래한 점술로, 64개의 괘를 통해 현재 상황과 미래의 변화를 예측합니다. 아래 버튼을 눌러 오늘의 운세를 확인하세요.</p>
+        <button id="fortune-button">운세 보기</button>
+        <div id="fortune-result" class="hidden">
+            <div id="hexagram-symbol"></div>
+            <h2 id="hexagram-name"></h2>
+            <p id="hexagram-interpretation"></p>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
