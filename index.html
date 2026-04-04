@@ -9,13 +9,13 @@
 <body>
     <div id="language-switcher">
         <select id="lang-select">
-            <option value="ko">한국어</option>
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-            <option value="zh">中文</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="es">Español</option>
+            <option value="ko">🇰🇷 한국어</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="es">🇪🇸 Español</option>
         </select>
     </div>
 
@@ -26,46 +26,56 @@
         </header>
         
         <main>
+            <!-- 입력 뷰 -->
             <div id="input-view">
                 <div class="input-section">
-                    <label id="label-concern" for="concern-input">당신의 고민은 무엇인가요?</label>
-                    <textarea id="concern-input" placeholder="여기에 고민을 구체적으로 적어주세요..."></textarea>
+                    <label id="label-concern" for="concern-input">어떤 게 궁금해? 언니가 알려줄게! ✨</label>
+                    <textarea id="concern-input" placeholder="여기에 고민을 구체적으로 적어주면 강아지 친구들이 도와줄 거야..."></textarea>
                 </div>
                 <button id="start-button">🐾 운세 시작하기 🐾</button>
             </div>
 
+            <!-- 산통 뷰 -->
             <div id="divination-view" class="hidden">
-                <div id="divination-sticks-container">
-                    <div class="sticks-box">
-                        <div class="stick"></div>
-                        <div class="stick"></div>
-                        <div class="stick"></div>
-                        <div class="stick"></div>
-                        <div class="stick"></div>
+                <div id="divination-sticks-container" class="sticks-box-container">
+                    <div class="sticks-box-image"></div>
+                    <div class="stick-set">
+                        <div class="stick-item"></div>
+                        <div class="stick-item"></div>
+                        <div class="stick-item"></div>
+                        <div class="stick-item"></div>
+                        <div class="stick-item"></div>
                     </div>
                 </div>
-                <p id="divination-guide">산통을 클릭하여 효(爻)를 하나씩 뽑아주세요. (0/6)</p>
+                <p id="divination-guide">상자를 흔들어서 효(爻)를 하나씩 뽑아보자! (0/6)</p>
                 <div id="drawn-lines-container">
                     <!-- 효가 아래에서 위로 쌓입니다 -->
                 </div>
             </div>
 
+            <!-- 결과 뷰 -->
             <div id="fortune-result" class="hidden">
                 <div class="result-card">
                     <div id="user-concern-display" class="user-concern"></div>
-                    <div class="dog-display" id="dog-pixel-art-container">
-                        <!-- 픽셀 아트 강아지 SVG가 들어갑니다 -->
+                    <div class="dog-pixel-art" id="dog-pixel-art-container">
+                        <!-- 움직이는 정면 픽셀 강아지 SVG -->
                     </div>
-                    <h2 id="hexagram-name"></h2>
-                    <div id="hexagram-display-final"></div>
-                    <div id="hexagram-interpretation" class="interpretation-section"></div>
-                    <button id="retry-button">다시 하기</button>
+                    <div id="hexagram-shape-display">
+                        <!-- 괘형 표시 -->
+                    </div>
+                    <h2 id="hexagram-name" style="text-align:center; color:#ff4d6d;"></h2>
+                    <div id="hexagram-interpretation" class="interpretation-section">
+                        <!-- 다정한 해석 본문 -->
+                    </div>
+                    <div style="text-align:center;">
+                        <button id="retry-button">다시 해보기 🌸</button>
+                    </div>
                 </div>
             </div>
         </main>
         
         <footer class="disclaimer">
-            <p id="disclaimer-text">※ 주역 운세는 참고용일 뿐입니다. 너무 맹신하지 마시고 가벼운 마음으로 즐겨주세요.</p>
+            <p id="disclaimer-text">※ 주역 운세는 참고용일 뿐이야! 너무 맹신하지 말고 재미로만 봐줘~ 💖</p>
         </footer>
     </div>
     <script src="main.js"></script>

@@ -1,23 +1,26 @@
 
 :root {
-    --primary-color: #ffb7c5;
-    --secondary-color: #fffaf0;
-    --accent-color: #ffe066;
-    --text-color: #333333;
-    --bg-color: #f8f9fa;
-    --system-font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --main-pink: #ffafcc;
+    --soft-pink: #ffc2d1;
+    --warm-yellow: #ffe5ec;
+    --girly-purple: #cdb4db;
+    --text-brown: #6d4c41;
+    --white: #ffffff;
+    --apple-font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Nanum Gothic", sans-serif;
 }
 
 body {
-    font-family: var(--system-font);
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    font-family: var(--apple-font);
+    background-color: #fff0f3;
+    background-image: radial-gradient(#ffb3c1 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    color: var(--text-brown);
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 #language-switcher {
@@ -28,117 +31,228 @@ body {
 }
 
 #lang-select {
-    padding: 8px 12px;
-    border-radius: 12px;
-    border: 1.5px solid #eee;
-    font-family: var(--system-font);
-    background-color: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 2px solid var(--main-pink);
+    background: white;
+    color: var(--text-brown);
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
 }
 
 .container {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
     padding: 40px;
-    border-radius: 32px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
-    max-width: 600px;
+    border-radius: 40px;
+    box-shadow: 0 15px 40px rgba(255, 175, 204, 0.3);
+    max-width: 550px;
     width: 90%;
     text-align: center;
+    border: 5px solid var(--soft-pink);
+    position: relative;
 }
 
-header h1 { font-size: 2em; margin-bottom: 10px; }
-.description { color: #666; margin-bottom: 30px; }
+.container::before {
+    content: '🌸';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 40px;
+}
 
-.input-section { text-align: left; margin-bottom: 24px; }
-.input-section label { display: block; font-weight: 600; margin-bottom: 8px; }
+header h1 {
+    font-size: 1.8em;
+    color: #ff4d6d;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.description {
+    font-size: 1em;
+    color: #ff758f;
+    margin-bottom: 30px;
+}
+
+.input-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
 textarea {
-    width: 100%; height: 120px; border: 1.5px solid #eee; border-radius: 16px;
-    padding: 16px; font-family: inherit; font-size: 1em; resize: none;
-    box-sizing: border-box; background-color: #fafafa;
+    width: 100%;
+    height: 100px;
+    border: 3px solid var(--warm-yellow);
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 1em;
+    font-family: inherit;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+textarea:focus {
+    border-color: var(--main-pink);
+    background-color: #fffafa;
 }
 
 #start-button, #retry-button {
-    background-color: #ff6b6b; color: white; border: none; padding: 16px 40px;
-    border-radius: 100px; font-weight: 600; font-size: 1.1em; cursor: pointer;
-    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
-}
-
-#divination-view {
-    padding: 40px 0;
-}
-
-#divination-sticks-container {
+    background: linear-gradient(135deg, #ff8fa3, #ffb3c1);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
     cursor: pointer;
-    margin: 0 auto 30px;
-    width: 120px; height: 180px;
-    background-color: #e67e22;
-    border-radius: 10px 10px 20px 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(255, 143, 163, 0.4);
+    transition: 0.3s;
+}
+
+#start-button:hover {
+    transform: scale(1.05);
+}
+
+/* 산통 디자인 개선 */
+#divination-view { padding: 30px 0; }
+
+.sticks-box-container {
+    width: 150px;
+    height: 200px;
+    margin: 0 auto 20px;
     position: relative;
-    box-shadow: inset 0 -10px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.sticks-box-image {
+    width: 100%;
+    height: 100%;
+    background: #d4a373;
+    border-radius: 10px 10px 30px 30px;
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2), 5px 5px 15px rgba(0,0,0,0.1);
+    border: 4px solid #bc8a5f;
+}
+
+.stick-set {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    right: 20px;
+    height: 100px;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 10px;
+    justify-content: space-around;
 }
 
-.sticks-box {
-    width: 80%; height: 100%; position: relative;
+.stick-item {
+    width: 8px;
+    height: 120px;
+    background: #faedcd;
+    border-radius: 4px;
+    border: 1px solid #d4a373;
 }
 
-.stick {
-    position: absolute; width: 6px; height: 120px;
-    background-color: #f1c40f; border-radius: 3px;
-    transition: transform 0.5s ease;
-    left: 50%; bottom: 40px; transform: translateX(-50%);
+.animating .stick-item {
+    animation: shake 0.5s infinite;
 }
 
-#divination-sticks-container:active .stick {
-    transform: translateX(-50%) translateY(-20px) rotate(5deg);
+@keyframes shake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0); }
 }
 
 #drawn-lines-container {
     display: flex;
-    flex-direction: column-reverse; /* 아래에서 위로 쌓기 */
-    gap: 8px;
+    flex-direction: column-reverse;
+    gap: 10px;
     align-items: center;
-    min-height: 120px;
     margin-top: 20px;
+    min-height: 140px;
 }
 
 .yao-line {
-    width: 100px; height: 12px; border-radius: 4px;
+    width: 120px;
+    height: 14px;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.yao-yang { background-color: #333; }
+.yao-yang { background-color: #ff4d6d; }
 .yao-yin {
-    background-image: linear-gradient(to right, #333 40%, transparent 40%, transparent 60%, #333 60%);
+    background: repeating-linear-gradient(to right, #ff758f 0, #ff758f 45px, transparent 45px, transparent 75px, #ff758f 75px, #ff758f 120px);
 }
 
-.result-card { text-align: left; }
+/* 결과 페이지 */
+.result-card {
+    background: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+.dog-pixel-art {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    background: #fff;
+    border-radius: 50%;
+    border: 5px solid var(--warm-yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#hexagram-shape-display {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.mini-yao {
+    width: 60px;
+    height: 8px;
+    border-radius: 4px;
+}
+
 .user-concern {
-    font-weight: 600; color: #ff6b6b; padding: 16px;
-    background-color: #fff5f5; border-radius: 12px; margin-bottom: 24px;
+    font-size: 1.1em;
+    background: #fff0f3;
+    padding: 15px;
+    border-radius: 15px;
+    border-left: 5px solid #ff8fa3;
+    margin-bottom: 25px;
 }
 
-#dog-pixel-art-container {
-    display: flex; justify-content: center; margin-bottom: 20px;
+.interpretation-section {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--text-brown);
 }
 
-#hexagram-name { text-align: center; font-size: 1.8em; margin: 20px 0; }
-
-.interpretation-section { line-height: 1.8; color: #444; margin-bottom: 30px; }
-.interpretation-section p { margin-bottom: 20px; }
-
-.disclaimer { margin-top: 40px; font-size: 0.85em; color: #999; border-top: 1px solid #eee; padding-top: 20px; }
+.interpretation-section p {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 10px;
+}
 
 .hidden { display: none !important; }
 
-@keyframes stick-out {
-    0% { transform: translate(-50%, 0); }
-    50% { transform: translate(-50%, -100px) rotate(10deg); }
-    100% { transform: translate(-50%, 0); }
+/* 강아지 애니메이션 */
+@keyframes blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
 }
 
-.stick-animating {
-    animation: stick-out 0.8s ease;
+@keyframes wag {
+    0%, 100% { transform: rotate(0); }
+    50% { transform: rotate(10deg); }
 }
