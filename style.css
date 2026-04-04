@@ -1,84 +1,180 @@
 
+/* 귀엽고 친근한 픽셀 아트 스타일 */
+:root {
+    --primary-color: #ffb7c5; /* 연분홍 */
+    --secondary-color: #fff4e6; /* 크림색 */
+    --accent-color: #ffd8a8; /* 파스텔 오렌지 */
+    --text-color: #5d4037; /* 다크 브라운 */
+    --bg-color: #fff9db; /* 연노랑 */
+    --pixel-font: 'DungGeunMo', 'Press Start 2P', cursive;
+    --soft-font: 'Gaegu', 'Nanum Pen Script', cursive;
+}
+
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
+    font-family: var(--soft-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-image: subtle-noise-texture.png;
+    padding: 20px;
+    background-image: radial-gradient(var(--accent-color) 1px, transparent 1px);
+    background-size: 20px 20px; /* 도트 배경 느낌 */
 }
 
 .container {
     text-align: center;
-    background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
-    width: 90%;
-    border: 1px solid #333;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 0 var(--accent-color), 0 15px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    border: 6px solid var(--primary-color);
 }
 
 h1 {
-    font-size: 2.5em;
-    color: #ffffff;
-    margin-bottom: 20px;
+    font-family: var(--pixel-font);
+    font-size: 2em;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .description {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: #868e96;
+}
+
+.input-section {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-section label {
+    display: block;
+    font-family: var(--pixel-font);
+    margin-bottom: 10px;
     font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: #b0b0b0;
+    color: #ff922b;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    border: 4px solid var(--accent-color);
+    border-radius: 15px;
+    font-family: var(--soft-font);
+    font-size: 1.2em;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    resize: none;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+textarea:focus {
+    border-color: var(--primary-color);
 }
 
 #fortune-button {
-    background-color: #6200ea;
+    background-color: #ff8787;
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
+    padding: 15px 40px;
+    font-family: var(--pixel-font);
+    font-size: 1.4em;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px 15px rgba(98, 0, 234, 0.3);
+    transition: transform 0.1s, box-shadow 0.1s;
+    box-shadow: 0 6px 0 #fa5252;
+    margin-bottom: 10px;
+}
+
+#fortune-button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #fa5252;
 }
 
 #fortune-button:hover {
-    background-color: #7f39fb;
-    box-shadow: 0 8px 25px rgba(98, 0, 234, 0.5);
+    background-color: #ff6b6b;
 }
 
 #fortune-result {
-    margin-top: 40px;
-    padding: 30px;
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    border: 1px solid #444;
+    margin-top: 30px;
+    animation: bounceIn 0.8s ease;
 }
 
-#hexagram-symbol {
-    font-size: 4em;
-    margin-bottom: 20px;
-    color: #ffffff;
-    line-height: 1;
+.result-card {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 20px;
+    border: 4px dashed var(--primary-color);
+}
+
+.user-concern {
+    font-family: var(--pixel-font);
+    font-size: 1em;
+    color: #845ef7;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.dog-display {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#dog-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: #fff;
+    border: 4px solid var(--accent-color);
+    image-rendering: pixelated; /* 픽셀 아트 느낌 강조 */
+}
+
+.pixel-art-symbol {
+    font-family: monospace;
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    color: #495057;
 }
 
 #hexagram-name {
-    font-size: 2em;
-    color: #bb86fc;
-    margin-bottom: 15px;
+    font-family: var(--pixel-font);
+    font-size: 1.5em;
+    color: #ff6b6b;
+    margin-bottom: 10px;
 }
 
 #hexagram-interpretation {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #c0c0c0;
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: var(--text-color);
+    word-break: keep-all;
 }
 
 .hidden {
     display: none;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #adb5bd;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
 }
