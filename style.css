@@ -21,222 +21,108 @@ body {
     line-height: 1.6;
 }
 
-#language-switcher {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-}
-
-#lang-select {
-    padding: 10px 15px;
-    border-radius: 20px;
-    border: 2px solid var(--main-pink);
-    background: white;
-    font-weight: bold;
-    outline: none;
-}
-
 .container {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.98);
     padding: 40px;
     border-radius: 40px;
-    box-shadow: 0 20px 50px rgba(255, 175, 204, 0.3);
-    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(255, 175, 204, 0.4);
+    max-width: 650px;
     width: 90%;
     text-align: center;
-    border: 6px solid var(--soft-pink);
-}
-
-header h1 { color: #ff4d6d; margin-bottom: 10px; }
-.description { color: #ff758f; margin-bottom: 30px; }
-
-textarea {
-    width: 100%;
-    height: 120px;
-    border: 3px solid var(--warm-yellow);
-    border-radius: 20px;
-    padding: 15px;
-    font-size: 1em;
-    font-family: inherit;
-    resize: none;
-    outline: none;
-    box-sizing: border-box;
+    border: 8px solid var(--soft-pink);
 }
 
 #start-button, #retry-button {
     background: linear-gradient(135deg, #ff8fa3, #ffb3c1);
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 30px;
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow: 0 5px 15px rgba(255, 143, 163, 0.4);
+    color: white; border: none; padding: 18px 50px;
+    border-radius: 40px; font-size: 1.3em; font-weight: bold;
+    cursor: pointer; box-shadow: 0 8px 20px rgba(255, 143, 163, 0.4);
+    transition: 0.3s;
 }
 
-/* 고퀄리티 나무통(산통) 구현 */
-.divination-area {
-    padding: 40px 0;
-}
-
+/* 나무통 및 작대기 푱! 애니메이션 */
 .sticks-box-container {
-    width: 140px;
-    height: 180px;
-    margin: 0 auto 30px;
-    position: relative;
-    cursor: pointer;
-    overflow: visible; /* 작대기가 위로 튀어나와야 함 */
+    width: 160px; height: 200px; margin: 0 auto 40px;
+    position: relative; cursor: pointer;
 }
 
-/* 나무 원통 */
 .sticks-box-image {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     background-color: var(--wood-dark);
-    border-radius: 5px 5px 40px 40px;
+    border-radius: 5px 5px 50px 50px;
+    position: absolute; bottom: 0; z-index: 10;
+    border: 5px solid #5d2906;
+    box-shadow: inset -10px -10px 20px rgba(0,0,0,0.4);
+}
+
+/* 튀어나오는 작대기 */
+.popping-stick {
     position: absolute;
-    bottom: 0;
-    z-index: 2; /* 작대기를 가려주는 부분 */
-    border: 4px solid #5d2906;
-    box-shadow: inset -10px -10px 20px rgba(0,0,0,0.3);
-}
-
-/* 작대기들이 들어있는 내부 공간 (가려짐) */
-.stick-inner-area {
-    position: absolute;
-    top: 20px;
-    left: 15px;
-    right: 15px;
-    bottom: 20px;
-    z-index: 1;
-    overflow: hidden; /* 원통 아래로 나가는 작대기 가림 */
-}
-
-.stick-set {
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    align-items: flex-end;
-}
-
-.stick-item {
-    width: 10px;
-    height: 140px;
+    width: 12px; height: 150px;
     background-color: var(--wood-light);
-    border: 1px solid #8b4513;
-    border-radius: 2px;
-    transition: transform 0.3s ease;
+    border: 2px solid #8b4513;
+    border-radius: 4px;
+    left: 50%; bottom: 80px;
+    transform: translateX(-50%);
+    z-index: 5;
+    opacity: 0;
 }
 
-.animating .stick-item {
-    animation: shake-sticks 0.1s infinite;
+.pop-anim {
+    animation: stick-pop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-@keyframes shake-sticks {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(2px, -5px) rotate(2deg); }
-    100% { transform: translate(-2px, 2px) rotate(-2deg); }
+@keyframes stick-pop {
+    0% { transform: translateX(-50%) translateY(0); opacity: 0; }
+    20% { opacity: 1; }
+    50% { transform: translateX(-50%) translateY(-180px) rotate(10deg); }
+    80% { transform: translateX(-50%) translateY(-160px) rotate(5deg); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(-160px) rotate(5deg); opacity: 0; }
 }
 
 #drawn-lines-container {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 12px;
-    align-items: center;
-    margin-top: 30px;
-    min-height: 160px;
+    display: flex; flex-direction: column-reverse;
+    gap: 12px; align-items: center; margin-top: 20px;
 }
 
 .yao-line {
-    width: 140px;
-    height: 16px;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    width: 160px; height: 18px; border-radius: 9px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .yao-yang { background-color: #ff4d6d; }
 .yao-yin {
-    background: repeating-linear-gradient(to right, #ff758f 0, #ff758f 55px, transparent 55px, transparent 85px, #ff758f 85px, #ff758f 140px);
+    background: repeating-linear-gradient(to right, #ff758f 0, #ff758f 65px, transparent 65px, transparent 95px, #ff758f 95px, #ff758f 160px);
 }
 
-/* 결과 페이지 레이아웃 */
-.result-card {
-    background: #fff;
-    padding: 0;
-    text-align: left;
-}
-
-.dog-container-wrapper {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
+/* 결과 강아지 256px */
 .dog-pixel-art {
-    width: 220px;
-    height: 220px;
-    margin: 0 auto 10px;
+    width: 256px; height: 256px;
+    margin: 0 auto 15px;
     background: #fff;
-    border-radius: 30px;
-    border: 6px solid var(--warm-yellow);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 40px;
+    border: 8px solid var(--warm-yellow);
+    display: flex; justify-content: center; align-items: center;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
-.breed-label {
-    font-size: 0.9em;
-    color: #999;
-    font-weight: 600;
-}
+.breed-label { font-size: 1.1em; color: #ff758f; font-weight: bold; margin-bottom: 20px; }
 
 #hexagram-shape-display {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 6px;
-    align-items: center;
-    margin: 25px 0;
-    padding: 15px;
-    background: #fafafa;
-    border-radius: 20px;
+    display: flex; flex-direction: column-reverse;
+    gap: 8px; align-items: center; margin: 30px 0;
+    padding: 20px; background: #fffafb; border-radius: 25px;
 }
 
-.mini-yao {
-    width: 80px;
-    height: 10px;
-    border-radius: 5px;
-}
+.mini-yao { width: 100px; height: 12px; border-radius: 6px; }
 
-.user-concern {
-    font-size: 1.1em;
-    background: #fff5f7;
-    padding: 20px;
-    border-radius: 20px;
-    border-left: 6px solid #ff8fa3;
-    margin-bottom: 30px;
-    color: #ff4d6d;
-    font-weight: 600;
-}
-
-.interpretation-section {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: var(--text-brown);
-}
-
-.interpretation-section p {
-    margin-bottom: 25px;
-    white-space: pre-wrap;
-    word-break: keep-all;
-}
+.interpretation-section { text-align: left; font-size: 1.15em; line-height: 1.9; }
+.interpretation-section p { margin-bottom: 30px; }
 
 .hidden { display: none !important; }
 
-/* 강아지 애니메이션 (고해상도 느낌) */
+/* 강아지 디테일 애니메이션 */
 @keyframes blink { 0%, 90%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
-@keyframes nose-wiggle { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-@keyframes ear-flap { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(5deg); } }
+@keyframes ear-move { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes tail-wag { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(15deg); } }

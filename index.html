@@ -26,7 +26,6 @@
         </header>
         
         <main>
-            <!-- 입력 뷰 -->
             <div id="input-view">
                 <div class="input-section">
                     <label id="label-concern" for="concern-input">어떤 게 궁금해? 언니가 알려줄게! ✨</label>
@@ -35,10 +34,9 @@
                 <button id="start-button">🐾 운세 시작하기 🐾</button>
             </div>
 
-            <!-- 나무통 뷰 -->
             <div id="divination-view" class="hidden">
                 <div id="divination-sticks-container" class="sticks-box-container">
-                    <!-- 작대기들이 숨겨진 영역 -->
+                    <div id="pop-stick" class="popping-stick"></div>
                     <div class="stick-inner-area">
                         <div class="stick-set">
                             <div class="stick-item"></div>
@@ -46,41 +44,24 @@
                             <div class="stick-item"></div>
                             <div class="stick-item"></div>
                             <div class="stick-item"></div>
-                            <div class="stick-item"></div>
-                            <div class="stick-item"></div>
                         </div>
                     </div>
-                    <!-- 밖을 가리는 나무통 -->
                     <div class="sticks-box-image"></div>
                 </div>
                 <p id="divination-guide">나무통을 흔들어서 효(爻)를 하나씩 뽑아보자! (0/6)</p>
-                <div id="drawn-lines-container">
-                    <!-- 효가 아래에서 위로 쌓입니다 -->
-                </div>
+                <div id="drawn-lines-container"></div>
             </div>
 
-            <!-- 결과 뷰 -->
             <div id="fortune-result" class="hidden">
                 <div class="result-card">
                     <div id="user-concern-display" class="user-concern"></div>
-                    
                     <div class="dog-container-wrapper">
-                        <div class="dog-pixel-art" id="dog-pixel-art-container">
-                            <!-- 정교한 정면 픽셀 강아지 SVG -->
-                        </div>
+                        <div class="dog-pixel-art" id="dog-pixel-art-container"></div>
                         <div id="dog-breed-name" class="breed-label"></div>
                     </div>
-
-                    <div id="hexagram-shape-display">
-                        <!-- 괘형 표시 -->
-                    </div>
-
-                    <h2 id="hexagram-name" style="text-align:center; color:#ff4d6d; font-size: 1.8em; margin: 10px 0;"></h2>
-                    
-                    <div id="hexagram-interpretation" class="interpretation-section">
-                        <!-- 유기적인 해석 본문 -->
-                    </div>
-                    
+                    <div id="hexagram-shape-display"></div>
+                    <h2 id="hexagram-name" style="text-align:center; color:#ff4d6d; margin: 15px 0;"></h2>
+                    <div id="hexagram-interpretation" class="interpretation-section"></div>
                     <div style="text-align:center; margin-top: 30px;">
                         <button id="retry-button">다시 해보기 🌸</button>
                     </div>
@@ -88,7 +69,7 @@
             </div>
         </main>
         
-        <footer class="disclaimer" style="margin-top: 40px; border-top: 1px solid #ffe5ec; padding-top: 20px; font-size: 0.85em; color: #ff8fa3;">
+        <footer class="disclaimer">
             <p id="disclaimer-text">※ 주역 운세는 참고용일 뿐이야! 너무 맹신하지 말고 재미로만 봐줘~ 💖</p>
         </footer>
     </div>
