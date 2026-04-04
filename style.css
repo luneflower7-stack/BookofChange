@@ -1,17 +1,16 @@
 
-/* 귀엽고 친근한 픽셀 아트 스타일 */
+/* 애플 시스템 폰트 및 깔끔한 스타일 */
 :root {
-    --primary-color: #ffb7c5; /* 연분홍 */
-    --secondary-color: #fff4e6; /* 크림색 */
-    --accent-color: #ffd8a8; /* 파스텔 오렌지 */
-    --text-color: #5d4037; /* 다크 브라운 */
-    --bg-color: #fff9db; /* 연노랑 */
-    --pixel-font: 'DungGeunMo', 'Press Start 2P', cursive;
-    --soft-font: 'Gaegu', 'Nanum Pen Script', cursive;
+    --primary-color: #ffb7c5;
+    --secondary-color: #fffaf0;
+    --accent-color: #ffe066;
+    --text-color: #333333;
+    --bg-color: #f8f9fa;
+    --system-font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
-    font-family: var(--soft-font);
+    font-family: var(--system-font);
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
@@ -20,161 +19,165 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
-    background-image: radial-gradient(var(--accent-color) 1px, transparent 1px);
-    background-size: 20px 20px; /* 도트 배경 느낌 */
+    line-height: 1.6;
 }
 
 .container {
     text-align: center;
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 30px;
-    box-shadow: 0 10px 0 var(--accent-color), 0 15px 30px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
     width: 100%;
-    border: 6px solid var(--primary-color);
 }
 
-h1 {
-    font-family: var(--pixel-font);
-    font-size: 2em;
-    color: #ff6b6b;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 0 var(--accent-color);
+header h1 {
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #222;
+    margin-bottom: 8px;
 }
 
 .description {
-    font-size: 1.2em;
-    margin-bottom: 25px;
-    color: #868e96;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 32px;
 }
 
 .input-section {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     text-align: left;
 }
 
 .input-section label {
     display: block;
-    font-family: var(--pixel-font);
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #ff922b;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #444;
 }
 
 textarea {
     width: 100%;
-    height: 100px;
-    padding: 15px;
-    border: 4px solid var(--accent-color);
-    border-radius: 15px;
-    font-family: var(--soft-font);
-    font-size: 1.2em;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    height: 120px;
+    padding: 16px;
+    border: 1.5px solid #eee;
+    border-radius: 16px;
+    font-family: var(--system-font);
+    font-size: 1.1em;
+    background-color: #fafafa;
+    color: #333;
     resize: none;
     box-sizing: border-box;
     outline: none;
-    transition: border-color 0.2s;
+    transition: all 0.2s;
 }
 
 textarea:focus {
     border-color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 183, 197, 0.2);
 }
 
 #fortune-button {
-    background-color: #ff8787;
+    background-color: #ff6b6b;
     color: white;
     border: none;
-    padding: 15px 40px;
-    font-family: var(--pixel-font);
-    font-size: 1.4em;
-    border-radius: 50px;
+    padding: 18px 48px;
+    font-weight: 600;
+    font-size: 1.2em;
+    border-radius: 100px;
     cursor: pointer;
-    transition: transform 0.1s, box-shadow 0.1s;
-    box-shadow: 0 6px 0 #fa5252;
-    margin-bottom: 10px;
-}
-
-#fortune-button:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px 0 #fa5252;
+    transition: all 0.2s;
+    box-shadow: 0 8px 16px rgba(255, 107, 107, 0.2);
 }
 
 #fortune-button:hover {
-    background-color: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 107, 107, 0.3);
+}
+
+#fortune-button:active {
+    transform: translateY(0);
 }
 
 #fortune-result {
-    margin-top: 30px;
-    animation: bounceIn 0.8s ease;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+    animation: fadeIn 0.6s ease-out;
 }
 
 .result-card {
-    background-color: var(--secondary-color);
-    padding: 20px;
-    border-radius: 20px;
-    border: 4px dashed var(--primary-color);
+    text-align: left;
+    background-color: #fff;
 }
 
 .user-concern {
-    font-family: var(--pixel-font);
-    font-size: 1em;
-    color: #845ef7;
-    margin-bottom: 15px;
-    font-weight: bold;
+    font-size: 1.1em;
+    color: #ff6b6b;
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: #fff5f5;
+    border-radius: 12px;
+    font-weight: 600;
 }
 
 .dog-display {
-    margin-bottom: 15px;
+    margin-bottom: 24px;
     display: flex;
     justify-content: center;
 }
 
 #dog-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 15px;
-    background-color: #fff;
-    border: 4px solid var(--accent-color);
-    image-rendering: pixelated; /* 픽셀 아트 느낌 강조 */
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .pixel-art-symbol {
-    font-family: monospace;
-    font-size: 2.5em;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
-    color: #495057;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #444;
 }
 
 #hexagram-name {
-    font-family: var(--pixel-font);
-    font-size: 1.5em;
-    color: #ff6b6b;
-    margin-bottom: 10px;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-#hexagram-interpretation {
-    font-size: 1.3em;
-    line-height: 1.6;
-    color: var(--text-color);
-    word-break: keep-all;
+.interpretation-section {
+    font-size: 1.1em;
+    color: #444;
+}
+
+.interpretation-section p {
+    margin-bottom: 16px;
+}
+
+.interpretation-section strong {
+    color: #222;
+}
+
+.disclaimer {
+    margin-top: 32px;
+    font-size: 0.9em;
+    color: #999;
+    padding: 16px;
+    border-top: 1px solid #f0f0f0;
 }
 
 .hidden {
     display: none;
 }
 
-footer {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #adb5bd;
-}
-
-@keyframes bounceIn {
-    0% { transform: scale(0.3); opacity: 0; }
-    50% { transform: scale(1.05); opacity: 1; }
-    70% { transform: scale(0.9); }
-    100% { transform: scale(1); }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

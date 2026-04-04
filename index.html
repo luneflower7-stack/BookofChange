@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강아지 주역 운세 🐶</title>
+    <title>강아지 주역 운세</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=DungGeunMo&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🐶 강아지 주역 운세 🐶</h1>
-            <p class="description">귀여운 픽셀 강아지들이 당신의 고민을 주역으로 풀어드려요!</p>
+            <p class="description">당신의 고민을 사랑스러운 강아지와 함께 주역으로 풀어보세요.</p>
         </header>
         
         <main>
             <div class="input-section">
                 <label for="concern-input">당신의 고민은 무엇인가요?</label>
-                <textarea id="concern-input" placeholder="여기에 고민을 적어주세요... (예: 오늘 점심 뭐 먹을까?)"></textarea>
+                <textarea id="concern-input" placeholder="여기에 고민을 구체적으로 적어주세요... (예: 새로 시작하려는 프로젝트, 잘 될까요?)"></textarea>
             </div>
 
-            <button id="fortune-button">🐾 운세 보기 🐾</button>
+            <button id="fortune-button">운세 확인하기</button>
 
             <div id="fortune-result" class="hidden">
                 <div class="result-card">
@@ -30,13 +29,15 @@
                     </div>
                     <div id="hexagram-symbol" class="pixel-art-symbol"></div>
                     <h2 id="hexagram-name"></h2>
-                    <p id="hexagram-interpretation"></p>
+                    <div id="hexagram-interpretation" class="interpretation-section">
+                        <!-- 해석 내용이 A, B, C, D 구조로 들어갑니다 -->
+                    </div>
                 </div>
             </div>
         </main>
         
-        <footer>
-            <p>© 2026 강아지 주역 운세. 모든 강아지는 행복할 자격이 있어요.</p>
+        <footer class="disclaimer">
+            <p>※ 주역 운세는 참고용일 뿐입니다. 너무 맹신하지 마시고 가벼운 마음으로 즐겨주세요.</p>
         </footer>
     </div>
     <script src="main.js"></script>
