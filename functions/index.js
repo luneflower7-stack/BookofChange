@@ -1,6 +1,14 @@
 const functions = require("firebase-functions");
 const cors = require("cors")({ origin: true });
 const fetch = require("node-fetch");
+const admin = require("firebase-admin");
+
+if (!admin.apps.length) {
+  admin.initializeApp();
+}
+
+const db = admin.firestore();
+const VISITOR_COUNTER_REF = db.collection("siteStats").doc("visitorCounter");
 
 const MODEL_NAME = "gpt-4o-mini";
 
@@ -265,6 +273,36 @@ exports.generateFortune = functions.https.onRequest(async (req, res) => {
   });
 });
 
+exports.getVisitorCount = functions.https.onRequest(async (req, res) => {
+  return cors(req, res, async () => {
+    try {
+      if (req.method !== "GET" && req.method !== "POST") {
+        return res.status(405).json({ error: "Method Not Allowed" });
+      }
+      const shouldIncrement = Boolean(req.body?.increment || req.query.increment === "1");
+      const nextCount = await db.runTransaction(async (transaction) => {
+        const snapshot = await transaction.get(VISITOR_COUNTER_REF);
+        const currentCount = snapshot.exists ? Number(snapshot.get("count") || 0) : 0;
+        const updatedCount = shouldIncrement ? currentCount + 1 : currentCount;
+        if (!snapshot.exists || shouldIncrement) {
+          transaction.set(
+            VISITOR_COUNTER_REF,
+            {
+              count: updatedCount,
+              updatedAt: admin.firestore.FieldValue.serverTimestamp()
+            },
+            { merge: true }
+          );
+        }
+        return updatedCount;
+      });
+      return res.json({ count: nextCount });
+    } catch (err) {
+      console.error("🔥 Visitor Counter Error:", err);
+      return res.status(500).json({ error: "Visitor Counter Error", message: err.message });
+    }
+  });
+});
 exports._private = {
   instructions,
   normalizeLanguage,

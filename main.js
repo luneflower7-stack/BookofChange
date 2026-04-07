@@ -20,6 +20,8 @@ const i18n = {
         navHome: "홈",
         navAbout: "소개",
         navPrivacy: "개인정보처리방침",
+        visitorLabel: "방문자",
+        visitorLoading: "불러오는 중...",
         aboutTitle: "멍멍쓰 주역 철학관 소개",
         aboutContent: `
                 <p><strong>멍멍쓰 주역 철학관</strong>은 고대 동양의 깊은 지혜인 주역(I Ching)을 현대적인 인공지능 기술과 친근한 강아지 캐릭터를 통해 재해석한 프리미엄 운세 서비스입니다.</p>
@@ -85,6 +87,8 @@ const i18n = {
         navHome: "Home",
         navAbout: "About",
         navPrivacy: "Privacy",
+        visitorLabel: "Visitors",
+        visitorLoading: "Loading...",
         aboutTitle: "About Paw I Ching Studio",
         aboutContent: `
                 <p><strong>Paw I Ching Studio</strong> is a premium fortune-telling service that reinterprets I Ching, the deep ancient wisdom of the East, through modern AI technology and friendly dog characters.</p>
@@ -146,6 +150,8 @@ const i18n = {
         navHome: "ホーム",
         navAbout: "紹介",
         navPrivacy: "プライバシー",
+        visitorLabel: "訪問者",
+        visitorLoading: "読み込み中...",
         aboutTitle: "哲学館について",
         aboutContent: `
                 <p><strong>わんちゃん周易哲学館</strong>は、古代東洋の深い知恵である周易（I Ching）を、現代的なAI技術と親しみやすいわんちゃんキャラクターを通じて再解釈したプレミアム占いサービスです。</p>
@@ -211,6 +217,8 @@ const i18n = {
         navHome: "首页",
         navAbout: "关于",
         navPrivacy: "隐私",
+        visitorLabel: "访客",
+        visitorLoading: "加载中...",
         aboutTitle: "关于哲学馆",
         aboutContent: `
                 <p><strong>狗狗周易哲学馆</strong>是一款高端占卜服务，通过现代人工智能技术和亲切的狗狗形象，重新诠释了古代东方的深邃智慧——周易（I Ching）。</p>
@@ -281,6 +289,8 @@ const i18n = {
         navHome: "Accueil",
         navAbout: "À propos",
         navPrivacy: "Confidentialité",
+        visitorLabel: "Visiteurs",
+        visitorLoading: "Chargement...",
         aboutTitle: "À propos de l'Institut du I Ching Canin",
         aboutContent: `
                 <p><strong>Institut du I Ching Canin</strong> est un service de divination premium qui réinterprète le Yi Jing, l'une des grandes sagesses de l'Orient, à travers l'IA moderne et des chiens attachants.</p>
@@ -347,6 +357,8 @@ const i18n = {
         navHome: "Start",
         navAbout: "Über uns",
         navPrivacy: "Datenschutz",
+        visitorLabel: "Besucher",
+        visitorLoading: "Laden...",
         aboutTitle: "Über das Hundische I-Ging-Studio",
         aboutContent: `
                 <p><strong>Hundisches I-Ging-Studio</strong> ist ein hochwertiger Orakelservice, der das I Ging, die tiefe Weisheit Ostasiens, mit moderner KI und freundlichen Hundebegleitern neu interpretiert.</p>
@@ -413,6 +425,8 @@ const i18n = {
         navHome: "Inicio",
         navAbout: "Información",
         navPrivacy: "Privacidad",
+        visitorLabel: "Visitantes",
+        visitorLoading: "Cargando...",
         aboutTitle: "Sobre el Estudio Canino del I Ching",
         aboutContent: `
                 <p><strong>Estudio Canino del I Ching</strong> es un servicio premium de lectura que reinterpreta el I Ching, una sabiduría oriental profunda, con tecnología de IA moderna y entrañables perros mensajeros.</p>
@@ -525,10 +539,15 @@ const hexagramNamesEn = {
 let currentLang = 'ko';
 let drawnLines = [];
 let userConcern = "";
+let visitorCount = null;
+
+const VISITOR_COUNTER_STORAGE_KEY = 'paw-iching-visitor-counted-v1';
+const VISITOR_COUNTER_URL = 'https://us-central1-bookofchange-71fed.cloudfunctions.net/getVisitorCount';
 
 // Select elements
 let titleEl, subtitleEl, labelConcernEl, concernInputEl, startButtonEl, retryButtonEl, disclaimerTextEl, footerCopyEl;
 let navHomeEl, navAboutEl, navPrivacyEl, aboutTitleEl, privacyTitleEl, aboutContentEl, privacyContentEl;
+let visitorCounterEl, visitorCounterLabelEl, visitorCounterValueEl;
 let backHomeButtons;
 
 function updateUI() {
@@ -556,6 +575,7 @@ function updateUI() {
     if (aboutContentEl) aboutContentEl.innerHTML = t.aboutContent;
     if (privacyContentEl) privacyContentEl.innerHTML = t.privacyContent;
 
+    updateVisitorCounterUI();
     backHomeButtons.forEach(btn => btn.textContent = t.backHome);
 
     const divinationView = document.getElementById('divination-view');
@@ -570,6 +590,56 @@ function showView(viewId) {
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     document.getElementById(viewId).classList.remove('hidden');
     window.scrollTo(0, 0);
+}
+function formatVisitorCount(value) {
+    if (!Number.isFinite(value)) return '--';
+    return new Intl.NumberFormat(currentLang).format(value);
+}
+
+function updateVisitorCounterUI() {
+    const t = i18n[currentLang];
+    if (!t || !visitorCounterLabelEl || !visitorCounterValueEl || !visitorCounterEl) return;
+
+    visitorCounterLabelEl.textContent = t.visitorLabel;
+    visitorCounterValueEl.textContent = visitorCount === null ? t.visitorLoading : formatVisitorCount(visitorCount);
+    visitorCounterEl.setAttribute('aria-label', t.visitorLabel + ' ' + visitorCounterValueEl.textContent);
+}
+
+async function syncVisitorCount() {
+    let shouldIncrement = false;
+
+    try {
+        shouldIncrement = localStorage.getItem(VISITOR_COUNTER_STORAGE_KEY) !== '1';
+    } catch (error) {
+        console.warn('localStorage unavailable for visitor counter:', error);
+        shouldIncrement = true;
+    }
+
+    try {
+        const res = await fetch(VISITOR_COUNTER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ increment: shouldIncrement })
+        });
+
+        if (!res.ok) throw new Error('Visitor counter request failed with ' + res.status);
+
+        const data = await res.json();
+        visitorCount = Number(data.count);
+        updateVisitorCounterUI();
+
+        if (shouldIncrement) {
+            try {
+                localStorage.setItem(VISITOR_COUNTER_STORAGE_KEY, '1');
+            } catch (error) {
+                console.warn('Unable to persist visitor counter state:', error);
+            }
+        }
+    } catch (error) {
+        console.error('Visitor counter error:', error);
+        visitorCount = null;
+        updateVisitorCounterUI();
+    }
 }
 
 // Initial setup after DOM load
@@ -593,6 +663,9 @@ document.addEventListener('DOMContentLoaded', () => {
     privacyTitleEl = document.getElementById('privacy-title');
     aboutContentEl = document.getElementById('about-content');
     privacyContentEl = document.getElementById('privacy-content');
+    visitorCounterEl = document.getElementById('visitor-counter');
+    visitorCounterLabelEl = document.getElementById('visitor-counter-label');
+    visitorCounterValueEl = document.getElementById('visitor-counter-value');
     backHomeButtons = document.querySelectorAll('.back-home-button');
 
     // Language Switcher
@@ -655,6 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateUI();
+    syncVisitorCount();
 });
 
 async function generateFortune(userConcern, guaInfo) {
