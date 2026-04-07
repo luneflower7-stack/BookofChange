@@ -2,7 +2,7 @@
 // --- (0) Internationalization Data ---
 const i18n = {
     ko: {
-        title: "🐶 멍멍쓰 주역 철학관 🐶",
+        title: "🐶 주역천재 멍선생 🐶",
         subtitle: "당신의 고민을 사랑스러운 강아지와 함께 주역으로 풀어보세요.",
         labelConcern: "어떤 게 궁금해? 멍멍이 친구들이 알려줄게! ✨",
         placeholder: "여기에 고민을 구체적으로 적어주면 강아지 친구들이 도와줄 거야...",
@@ -22,9 +22,9 @@ const i18n = {
         navPrivacy: "개인정보처리방침",
         visitorLabel: "방문자",
         visitorLoading: "불러오는 중...",
-        aboutTitle: "멍멍쓰 주역 철학관 소개",
+        aboutTitle: "주역천재 멍선생 소개",
         aboutContent: `
-                <p><strong>멍멍쓰 주역 철학관</strong>은 고대 동양의 깊은 지혜인 주역(I Ching)을 현대적인 인공지능 기술과 친근한 강아지 캐릭터를 통해 재해석한 프리미엄 운세 서비스입니다.</p>
+                <p><strong>주역천재 멍선생</strong>은 고대 동양의 깊은 지혜인 주역(I Ching)을 현대적인 인공지능 기술과 친근한 강아지 캐릭터를 통해 재해석한 프리미엄 운세 서비스입니다.</p>
                 <p>저희 서비스는 사용자가 일상에서 마주하는 다양한 고민들을 다정하고 따뜻한 시선으로 바라보고자 합니다. 단순히 미래를 예견하는 것을 넘어, 주역의 64괘가 담고 있는 철학적인 통찰을 통해 사용자가 스스로 답을 찾아갈 수 있도록 영감을 주는 것을 목표로 합니다.</p>
                 <p><strong>제공 서비스의 특징:</strong></p>
                 <ul>
@@ -32,7 +32,7 @@ const i18n = {
                     <li><strong>다양한 강아지 메신저:</strong> 64종의 귀여운 강아지 캐릭터들이 각기 다른 에너지를 담아 사용자에게 운세를 전달하며, 정서적인 위안과 즐거움을 함께 선사합니다.</li>
                     <li><strong>동양 철학의 대중화:</strong> 어렵게 느껴질 수 있는 주역의 원리를 직관적인 디자인과 쉬운 언어로 풀어내어 누구나 부담 없이 즐길 수 있습니다.</li>
                 </ul>
-                <p>멍멍쓰 주역 철학관은 항상 여러분의 곁에서 다정한 친구처럼, 때로는 지혜로운 조언자처럼 함께하겠습니다. 여러분의 모든 고민이 희망적인 변화의 시작이 되기를 진심으로 기원합니다.</p>
+                <p>주역천재 멍선생은 항상 여러분의 곁에서 다정한 친구처럼, 때로는 지혜로운 조언자처럼 함께하겠습니다. 여러분의 모든 고민이 희망적인 변화의 시작이 되기를 진심으로 기원합니다.</p>
         `,
         privacyTitle: "개인정보처리방침",
         privacyContent: `
@@ -56,7 +56,7 @@ const i18n = {
                 이용자는 언제든지 본 서비스 이용을 중단함으로써 개인정보 제공에 대한 동의를 철회할 수 있습니다.</p>
         `,
         backHome: "🐾 홈으로 돌아가기 🐾",
-        footerCopy: "&copy; 2026 멍멍쓰 주역 철학관. All rights reserved.",
+        footerCopy: "&copy; 2026 주역천재 멍선생. All rights reserved.",
         trigrams: {
             "111": { name: "하늘(天)", desc: "강건하고 창조적인 에너지" },
             "000": { name: "땅(地)", desc: "포용하고 수용하는 안정감" },
@@ -69,7 +69,7 @@ const i18n = {
         }
     },
     en: {
-        title: "🐶 Paw I Ching Studio 🐶",
+        title: "🐶 Master Meng: I Ching Genius 🐶",
         subtitle: "Unlock your future with adorable dogs through ancient wisdom.",
         labelConcern: "What's on your mind? Doggy friends will help! ✨",
         placeholder: "Tell your concerns here, your dog friends will guide you...",
@@ -89,9 +89,9 @@ const i18n = {
         navPrivacy: "Privacy",
         visitorLabel: "Visitors",
         visitorLoading: "Loading...",
-        aboutTitle: "About Paw I Ching Studio",
+        aboutTitle: "About Master Meng: I Ching Genius",
         aboutContent: `
-                <p><strong>Paw I Ching Studio</strong> is a premium fortune-telling service that reinterprets I Ching, the deep ancient wisdom of the East, through modern AI technology and friendly dog characters.</p>
+                <p><strong>Master Meng: I Ching Genius</strong> is a premium fortune-telling service that reinterprets I Ching, the deep ancient wisdom of the East, through modern AI technology and friendly dog characters.</p>
                 <p>Our service aims to look at various concerns users face in their daily lives with a kind and warm perspective. Beyond simply predicting the future, we aim to inspire users to find answers themselves through the philosophical insights contained in the 64 hexagrams of the I Ching.</p>
                 <p><strong>Features of Our Service:</strong></p>
                 <ul>
@@ -99,7 +99,7 @@ const i18n = {
                     <li><strong>Various Dog Messengers:</strong> 64 types of cute dog characters deliver fortunes with different energies, providing emotional comfort and joy.</li>
                     <li><strong>Popularization of Eastern Philosophy:</strong> We explain the principles of the I Ching, which can feel difficult, through intuitive design and easy language so anyone can enjoy it without burden.</li>
                 </ul>
-                <p>Paw I Ching Studio will always be with you like a kind friend and sometimes a wise advisor. We sincerely hope all your concerns become the start of a hopeful change.</p>
+                <p>Master Meng: I Ching Genius will always be with you like a kind friend and sometimes a wise advisor. We sincerely hope all your concerns become the start of a hopeful change.</p>
         `,
         privacyTitle: "Privacy Policy",
         privacyContent: `
@@ -123,7 +123,7 @@ const i18n = {
                 Users can withdraw their consent to the provision of personal information at any time by stopping the use of this service.</p>
         `,
         backHome: "🐾 Back to Home 🐾",
-        footerCopy: "&copy; 2026 Paw I Ching Studio. All rights reserved.",
+        footerCopy: "&copy; 2026 Master Meng: I Ching Genius. All rights reserved.",
         trigrams: {
             "111": { name: "Heaven", desc: "strong and creative energy" },
             "000": { name: "Earth", desc: "stability that accepts everything" },
@@ -136,7 +136,7 @@ const i18n = {
         }
     },
     ja: {
-        title: "🐶 わんちゃん周易哲学館 🐶",
+        title: "🐶 周易の天才 メン先生 🐶",
         subtitle: "あなたの悩みを可愛いわんちゃんと一緒に周易で解決しましょう。",
         labelConcern: "悩みごとは何？わんちゃんたちが教えてあげる！ ✨",
         placeholder: "ここに悩みを具体的に書くと、わんちゃんたちが助けてくれるよ...",
@@ -152,9 +152,9 @@ const i18n = {
         navPrivacy: "プライバシー",
         visitorLabel: "訪問者",
         visitorLoading: "読み込み中...",
-        aboutTitle: "哲学館について",
+        aboutTitle: "周易の天才 メン先生について",
         aboutContent: `
-                <p><strong>わんちゃん周易哲学館</strong>は、古代東洋の深い知恵である周易（I Ching）を、現代的なAI技術と親しみやすいわんちゃんキャラクターを通じて再解釈したプレミアム占いサービスです。</p>
+                <p><strong>周易の天才 メン先生</strong>は、古代東洋の深い知恵である周易（I Ching）を、現代的なAI技術と親しみやすいわんちゃんキャラクターを通じて再解釈したプレミアム占いサービスです。</p>
                 <p>私たちのサービスは、ユーザーが日常生活で直面する様々な悩みを、優しく温かい視点で見守ることを目指しています。単に未来を予言するだけでなく、周易の64卦が持つ哲学的な洞察を通じて、ユーザーが自ら答えを見つけ出せるようインスピレーションを与えることを目標としています。</p>
                 <p><strong>提供サービスの特徴：</strong></p>
                 <ul>
@@ -162,7 +162,7 @@ const i18n = {
                     <li><strong>多様なわんちゃんメッセンジャー：</strong> 64種類の可愛いわんちゃんキャラクターが、それぞれ異なるエネルギーを込めてユーザーに運勢を届け、情緒的な慰めと楽しさを提供します。</li>
                     <li><strong>東洋哲学の大衆化：</strong> 難しく感じられがちな周易の原理を、直感的なデザインと分かりやすい言葉で解き明かし、誰でも気軽に楽しめるようにしました。</li>
                 </ul>
-                <p>わんちゃん周易哲学館は、常にあなたのそばで優しい友人のように、時には賢い助言者のように寄り添います。あなたのすべての悩みが、希望に満ちた変化の始まりとなることを心から願っています。</p>
+                <p>周易の天才 メン先生は、いつもあなたのそばで優しい友人のように、時には賢い助言者のように寄り添います。あなたのすべての悩みが、希望に満ちた変化の始まりとなることを心から願っています。</p>
         `,
         privacyTitle: "プライバシーポリシー",
         privacyContent: `
@@ -186,7 +186,7 @@ const i18n = {
                 利用者は、いつでも本サービスの利用を中断することにより、個人情報の提供に関する同意を撤回することができます。</p>
         `,
         backHome: "🐾 ホームへ戻る 🐾",
-        footerCopy: "&copy; 2026 わんちゃん周易哲学館. All rights reserved.",
+        footerCopy: "&copy; 2026 周易の天才 メン先生. All rights reserved.",
         qPrefix: "Q. ",
         empathy: "あなたの悩みをじっと見つめていると、これまでどれほど心を砕いてきたかが伝わってきて、私も胸が熱くなります。さあ、周易の知恵を借りて、一緒に道を探してみましょう。",
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `あなたが引いた運勢は、下卦の**${lower}**と上卦の**${upper}**が合わさった組み合わせだよ。`,
@@ -203,7 +203,7 @@ const i18n = {
         }
     },
     zh: {
-        title: "🐶 狗狗周易哲学馆 🐶",
+        title: "🐶 孟老师，周易奇才 🐶",
         subtitle: "让可爱的狗狗陪你一起用周易化解烦恼。",
         labelConcern: "有什么烦恼吗？狗狗朋友们来告诉你！ ✨",
         placeholder: "在这里具体写下你的烦恼，狗狗朋友们会帮你的...",
@@ -219,9 +219,9 @@ const i18n = {
         navPrivacy: "隐私",
         visitorLabel: "访客",
         visitorLoading: "加载中...",
-        aboutTitle: "关于哲学馆",
+        aboutTitle: "关于孟老师，周易奇才",
         aboutContent: `
-                <p><strong>狗狗周易哲学馆</strong>是一款高端占卜服务，通过现代人工智能技术和亲切的狗狗形象，重新诠释了古代东方的深邃智慧——周易（I Ching）。</p>
+                <p><strong>孟老师，周易奇才</strong>是一款高端占卜服务，通过现代人工智能技术和亲切的狗狗形象，重新诠释了古代东方的深邃智慧——周易（I Ching）。</p>
                 <p>我们的服务旨在以亲切温情的视角，关注用户在日常生活中面临的各种烦恼。除了简单的预知未来，我们更希望通过周易六十四卦中所蕴含的哲学洞察，启发用户自己找到答案。</p>
                 <p><strong>服务特色：</strong></p>
                 <ul>
@@ -229,7 +229,7 @@ const i18n = {
                     <li><strong>多样化的狗狗信使：</strong> 64 种可爱的狗狗角色承载着不同的能量为用户传递运势，带来情感上的慰藉和乐趣。</li>
                     <li><strong>东方哲学的普及：</strong> 我们通过直观的设计和通俗易懂的语言，将原本深奥的周易原理呈现出来，让任何人都能轻松体验。</li>
                 </ul>
-                <p>狗狗周易哲学馆将像亲切的朋友，有时又像睿智的导师一样，始终陪伴在您身边。衷心祝愿您的每一个烦恼都能成为希望变化的开始。</p>
+                <p>孟老师，周易奇才，将像亲切的朋友，有时又像睿智的导师一样，始终陪伴在您身边。衷心祝愿您的每一个烦恼都能成为希望变化的开始。</p>
         `,
         privacyTitle: "隐私政策",
         privacyContent: `
@@ -253,7 +253,7 @@ const i18n = {
                 用户可以随时通过停止使用本服务来撤销对提供个人信息的同意。</p>
         `,
         backHome: "🐾 返回首页 🐾",
-        footerCopy: "&copy; 2026 狗狗周易哲学馆. All rights reserved.",
+        footerCopy: "&copy; 2026 孟老师，周易奇才. All rights reserved.",
         qPrefix: "问. ",
         empathy: "静静地看着你的烦恼，我能感受到你这段时间付出了多少心血。现在，让我们借助周易的智慧，一起寻找出路吧。",
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `你抽到的运势是下卦 **${lower}** 和上卦 **${upper}** 的组合。`,
@@ -270,7 +270,7 @@ const i18n = {
         }
     },
     fr: {
-        title: "🐶 Institut du I Ching Canin 🐶",
+        title: "🐶 Maître Meng, prodige du Yi Jing 🐶",
         subtitle: "Éclaire tes préoccupations avec l'aide de chiens adorables et de la sagesse du Yi Jing.",
         labelConcern: "Qu'est-ce qui t'inquiète ? Les toutous vont t'aider ! ✨",
         placeholder: "Écris ici ta préoccupation en détail, tes compagnons canins vont te guider...",
@@ -291,9 +291,9 @@ const i18n = {
         navPrivacy: "Confidentialité",
         visitorLabel: "Visiteurs",
         visitorLoading: "Chargement...",
-        aboutTitle: "À propos de l'Institut du I Ching Canin",
+        aboutTitle: "À propos de Maître Meng, prodige du Yi Jing",
         aboutContent: `
-                <p><strong>Institut du I Ching Canin</strong> est un service de divination premium qui réinterprète le Yi Jing, l'une des grandes sagesses de l'Orient, à travers l'IA moderne et des chiens attachants.</p>
+                <p><strong>Maître Meng, prodige du Yi Jing</strong> est un service de divination premium qui réinterprète le Yi Jing, l'une des grandes sagesses de l'Orient, à travers l'IA moderne et des chiens attachants.</p>
                 <p>Notre service accompagne les préoccupations du quotidien avec un regard chaleureux et attentionné. Au-delà d'une simple prédiction, nous voulons offrir une inspiration concrète pour t'aider à trouver tes propres réponses à partir des 64 hexagrammes.</p>
                 <p><strong>Caractéristiques du service :</strong></p>
                 <ul>
@@ -301,7 +301,7 @@ const i18n = {
                     <li><strong>Messagers canins variés :</strong> 64 chiens adorables transmettent la lecture avec des ambiances différentes et une touche de réconfort.</li>
                     <li><strong>Philosophie orientale accessible :</strong> nous expliquons le Yi Jing avec un langage simple et une présentation intuitive pour le rendre agréable à découvrir.</li>
                 </ul>
-                <p>Institut du I Ching Canin veut rester à tes côtés comme un ami doux et lucide. Nous espérons que chacune de tes questions devienne le début d'un changement porteur d'espoir.</p>
+                <p>Maître Meng, prodige du Yi Jing, veut rester à tes côtés comme un ami doux et lucide. Nous espérons que chacune de tes questions devienne le début d'un changement porteur d'espoir.</p>
         `,
         privacyTitle: "Politique de confidentialité",
         privacyContent: `
@@ -325,7 +325,7 @@ const i18n = {
                 Tu peux retirer ton consentement à tout moment en cessant d'utiliser ce service.</p>
         `,
         backHome: "🐾 Retour à l'accueil 🐾",
-        footerCopy: "&copy; 2026 Institut du I Ching Canin. All rights reserved.",
+        footerCopy: "&copy; 2026 Maître Meng, prodige du Yi Jing. All rights reserved.",
         trigrams: {
             "111": { name: "Ciel", desc: "une énergie forte et créatrice" },
             "000": { name: "Terre", desc: "une stabilité accueillante et réceptive" },
@@ -338,7 +338,7 @@ const i18n = {
         }
     },
     de: {
-        title: "🐶 Hundisches I-Ging-Studio 🐶",
+        title: "🐶 Meister Meng, das Genie des I Ging 🐶",
         subtitle: "Lass deine Sorgen mit niedlichen Hunden und der Weisheit des I Ging deuten.",
         labelConcern: "Was beschäftigt dich? Die Hunde helfen dir weiter! ✨",
         placeholder: "Schreib hier dein Anliegen möglichst genau auf, deine Hundefreunde begleiten dich...",
@@ -359,9 +359,9 @@ const i18n = {
         navPrivacy: "Datenschutz",
         visitorLabel: "Besucher",
         visitorLoading: "Laden...",
-        aboutTitle: "Über das Hundische I-Ging-Studio",
+        aboutTitle: "Über Meister Meng, das Genie des I Ging",
         aboutContent: `
-                <p><strong>Hundisches I-Ging-Studio</strong> ist ein hochwertiger Orakelservice, der das I Ging, die tiefe Weisheit Ostasiens, mit moderner KI und freundlichen Hundebegleitern neu interpretiert.</p>
+                <p><strong>Meister Meng, das Genie des I Ging</strong> ist ein hochwertiger Orakelservice, der das I Ging, die tiefe Weisheit Ostasiens, mit moderner KI und freundlichen Hundebegleitern neu interpretiert.</p>
                 <p>Unser Ziel ist es, alltägliche Sorgen mit einem warmen und aufmerksamen Blick zu betrachten. Statt nur Zukunft vorherzusagen, möchten wir durch die 64 Hexagramme Inspiration geben, damit du eigene Antworten finden kannst.</p>
                 <p><strong>Besondere Merkmale:</strong></p>
                 <ul>
@@ -369,7 +369,7 @@ const i18n = {
                     <li><strong>Vielfältige Hundeboten:</strong> 64 charmante Hunde überbringen die Botschaft jeweils mit eigener Stimmung und tröstender Präsenz.</li>
                     <li><strong>Leicht zugängliche Philosophie:</strong> Wir erklären das I Ging mit verständlicher Sprache und einem intuitiven Aufbau, damit es ohne Hürde erlebt werden kann.</li>
                 </ul>
-                <p>Hundisches I-Ging-Studio möchte dich wie ein freundlicher Begleiter und gelegentlich wie ein kluger Ratgeber unterstützen. Wir hoffen, dass jede deiner Fragen zu einem hoffnungsvollen Wandel führt.</p>
+                <p>Meister Meng, das Genie des I Ging, möchte dich wie ein freundlicher Begleiter und gelegentlich wie ein kluger Ratgeber unterstützen. Wir hoffen, dass jede deiner Fragen zu einem hoffnungsvollen Wandel führt.</p>
         `,
         privacyTitle: "Datenschutzerklärung",
         privacyContent: `
@@ -393,7 +393,7 @@ const i18n = {
                 Du kannst deine Einwilligung jederzeit widerrufen, indem du die Nutzung des Dienstes beendest.</p>
         `,
         backHome: "🐾 Zurück zur Startseite 🐾",
-        footerCopy: "&copy; 2026 Hundisches I-Ging-Studio. All rights reserved.",
+        footerCopy: "&copy; 2026 Meister Meng, das Genie des I Ging. All rights reserved.",
         trigrams: {
             "111": { name: "Himmel", desc: "eine starke und schöpferische Energie" },
             "000": { name: "Erde", desc: "eine aufnehmende und tragende Stabilität" },
@@ -406,7 +406,7 @@ const i18n = {
         }
     },
     es: {
-        title: "🐶 Estudio Canino del I Ching 🐶",
+        title: "🐶 Maestro Meng: genio del I Ching 🐶",
         subtitle: "Explora tus inquietudes con perritos adorables y la sabiduría ancestral del I Ching.",
         labelConcern: "¿Qué te preocupa? ¡Los perritos te van a orientar! ✨",
         placeholder: "Escribe aquí tu preocupación con detalle y tus amigos perrunos te acompañarán...",
@@ -427,9 +427,9 @@ const i18n = {
         navPrivacy: "Privacidad",
         visitorLabel: "Visitantes",
         visitorLoading: "Cargando...",
-        aboutTitle: "Sobre el Estudio Canino del I Ching",
+        aboutTitle: "Sobre Maestro Meng: genio del I Ching",
         aboutContent: `
-                <p><strong>Estudio Canino del I Ching</strong> es un servicio premium de lectura que reinterpreta el I Ching, una sabiduría oriental profunda, con tecnología de IA moderna y entrañables perros mensajeros.</p>
+                <p><strong>Maestro Meng: genio del I Ching</strong> es un servicio premium de lectura que reinterpreta el I Ching, una sabiduría oriental profunda, con tecnología de IA moderna y entrañables perros mensajeros.</p>
                 <p>Queremos mirar las preocupaciones cotidianas con una perspectiva cálida y cercana. Más allá de predecir el futuro, buscamos inspirarte para que encuentres tus propias respuestas a través de los 64 hexagramas.</p>
                 <p><strong>Características del servicio:</strong></p>
                 <ul>
@@ -437,7 +437,7 @@ const i18n = {
                     <li><strong>Mensajeros perrunos variados:</strong> 64 perros adorables transmiten la lectura con distintas energías, ternura y consuelo.</li>
                     <li><strong>Filosofía oriental accesible:</strong> explicamos el I Ching con un lenguaje claro y un diseño intuitivo para que cualquiera pueda disfrutarlo sin dificultad.</li>
                 </ul>
-                <p>Estudio Canino del I Ching quiere acompañarte como un amigo amable y, a veces, como un consejero sabio. Deseamos que cada una de tus dudas se convierta en el inicio de un cambio esperanzador.</p>
+                <p>Maestro Meng: genio del I Ching quiere acompañarte como un amigo amable y, a veces, como un consejero sabio. Deseamos que cada una de tus dudas se convierta en el inicio de un cambio esperanzador.</p>
         `,
         privacyTitle: "Política de privacidad",
         privacyContent: `
@@ -461,7 +461,7 @@ const i18n = {
                 Puedes retirar tu consentimiento en cualquier momento dejando de utilizar este servicio.</p>
         `,
         backHome: "🐾 Volver al inicio 🐾",
-        footerCopy: "&copy; 2026 Estudio Canino del I Ching. All rights reserved.",
+        footerCopy: "&copy; 2026 Maestro Meng: genio del I Ching. All rights reserved.",
         trigrams: {
             "111": { name: "Cielo", desc: "una energía fuerte y creadora" },
             "000": { name: "Tierra", desc: "una estabilidad receptiva que acoge" },
@@ -540,6 +540,7 @@ let currentLang = 'ko';
 let drawnLines = [];
 let userConcern = "";
 let visitorCount = null;
+let visitorCountState = 'loading';
 
 const VISITOR_COUNTER_STORAGE_KEY = 'paw-iching-visitor-counted-v1';
 const VISITOR_COUNTER_URL = 'https://us-central1-bookofchange-71fed.cloudfunctions.net/getVisitorCount';
@@ -601,7 +602,11 @@ function updateVisitorCounterUI() {
     if (!t || !visitorCounterLabelEl || !visitorCounterValueEl || !visitorCounterEl) return;
 
     visitorCounterLabelEl.textContent = t.visitorLabel;
-    visitorCounterValueEl.textContent = visitorCount === null ? t.visitorLoading : formatVisitorCount(visitorCount);
+    visitorCounterValueEl.textContent = visitorCountState === 'ready'
+        ? formatVisitorCount(visitorCount)
+        : visitorCountState === 'loading'
+            ? t.visitorLoading
+            : '--';
     visitorCounterEl.setAttribute('aria-label', t.visitorLabel + ' ' + visitorCounterValueEl.textContent);
 }
 
@@ -616,16 +621,21 @@ async function syncVisitorCount() {
     }
 
     try {
-        const res = await fetch(VISITOR_COUNTER_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ increment: shouldIncrement })
-        });
+        const requestUrl = new URL(VISITOR_COUNTER_URL);
+        if (shouldIncrement) requestUrl.searchParams.set('increment', '1');
+
+        const res = await fetch(requestUrl.toString(), { method: 'GET' });
 
         if (!res.ok) throw new Error('Visitor counter request failed with ' + res.status);
 
         const data = await res.json();
-        visitorCount = Number(data.count);
+        const nextCount = Number(data.count);
+        if (!Number.isFinite(nextCount)) {
+            throw new Error('Visitor counter returned an invalid count');
+        }
+
+        visitorCount = nextCount;
+        visitorCountState = 'ready';
         updateVisitorCounterUI();
 
         if (shouldIncrement) {
@@ -638,6 +648,7 @@ async function syncVisitorCount() {
     } catch (error) {
         console.error('Visitor counter error:', error);
         visitorCount = null;
+        visitorCountState = 'error';
         updateVisitorCounterUI();
     }
 }
@@ -667,6 +678,8 @@ document.addEventListener('DOMContentLoaded', () => {
     visitorCounterLabelEl = document.getElementById('visitor-counter-label');
     visitorCounterValueEl = document.getElementById('visitor-counter-value');
     backHomeButtons = document.querySelectorAll('.back-home-button');
+
+    updateVisitorCounterUI();
 
     // Language Switcher
     const langSelect = document.getElementById('lang-select');
