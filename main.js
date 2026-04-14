@@ -24,15 +24,43 @@ const i18n = {
         visitorLoading: "불러오는 중...",
         aboutTitle: "주역천재 멍선생 소개",
         aboutContent: `
-                <p><strong>주역천재 멍선생</strong>은 고대 동양의 깊은 지혜인 주역(I Ching)을 현대적인 인공지능 기술과 친근한 강아지 캐릭터를 통해 재해석한 프리미엄 운세 서비스입니다.</p>
-                <p>저희 서비스는 사용자가 일상에서 마주하는 다양한 고민들을 다정하고 따뜻한 시선으로 바라보고자 합니다. 단순히 미래를 예견하는 것을 넘어, 주역의 64괘가 담고 있는 철학적인 통찰을 통해 사용자가 스스로 답을 찾아갈 수 있도록 영감을 주는 것을 목표로 합니다.</p>
-                <p><strong>제공 서비스의 특징:</strong></p>
-                <ul>
-                    <li><strong>개인화된 점괘 분석:</strong> 사용자가 입력한 구체적인 고민 내용을 바탕으로, AI가 해당 시점의 우주적 기운(괘)을 분석하여 맞춤형 조언을 생성합니다.</li>
-                    <li><strong>다양한 강아지 메신저:</strong> 64종의 귀여운 강아지 캐릭터들이 각기 다른 에너지를 담아 사용자에게 운세를 전달하며, 정서적인 위안과 즐거움을 함께 선사합니다.</li>
-                    <li><strong>동양 철학의 대중화:</strong> 어렵게 느껴질 수 있는 주역의 원리를 직관적인 디자인과 쉬운 언어로 풀어내어 누구나 부담 없이 즐길 수 있습니다.</li>
-                </ul>
-                <p>주역천재 멍선생은 항상 여러분의 곁에서 다정한 친구처럼, 때로는 지혜로운 조언자처럼 함께하겠습니다. 여러분의 모든 고민이 희망적인 변화의 시작이 되기를 진심으로 기원합니다.</p>
+                <section class="content-grid">
+                    <article class="content-panel">
+                        <h3 class="section-title">서비스 안내</h3>
+                        <p><strong>주역천재 멍선생</strong>은 사용자가 직접 입력한 고민을 바탕으로 주역의 상징과 흐름을 현대적인 언어로 풀어 설명하는 해석형 콘텐츠 서비스입니다. 단순히 결과만 보여주는 운세 버튼이 아니라, 질문을 정리하고 현재 상황을 돌아보며 스스로 판단의 실마리를 찾도록 돕는 것을 목표로 합니다.</p>
+                        <p>이 사이트에서 제공하는 글과 해설은 직접 기획한 설명 문구, 서비스 소개, 이용 가이드, 주역 해석 방향을 바탕으로 구성되어 있습니다. 각 결과는 재미 요소를 포함하지만, 사용자가 자신의 상황을 천천히 성찰해 볼 수 있도록 문장 톤과 안내 방식을 세심하게 설계했습니다.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">주역천재 멍선생이 제공하는 것</h3>
+                        <p>이 서비스는 고민을 짧게 던지고 끝나는 일회성 재미 요소에 머물지 않도록 설계되었습니다. 사용자는 자신의 상황을 구체적으로 적고, 점괘가 상징하는 흐름을 읽으며 현재의 감정, 관계, 일, 선택지에 대해 다시 생각해 볼 수 있습니다.</p>
+                        <p>주역의 64괘는 각각 다른 상황의 변화, 균형, 충돌, 회복, 성장의 이미지를 담고 있습니다. 저희는 이 상징을 현대적인 고민 상황에 맞게 설명하여 누구나 어렵지 않게 읽을 수 있는 언어로 전달합니다.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">이용 방법</h3>
+                        <ol class="feature-list">
+                            <li>현재 가장 고민되는 상황을 구체적으로 적어 주세요. 막연한 질문보다 실제 맥락이 담긴 문장이 더 좋은 해석으로 이어집니다.</li>
+                            <li>효를 하나씩 뽑으며 결과를 기다려 주세요. 이 과정은 단순한 장식이 아니라, 사용자가 질문에 집중하도록 돕는 연출입니다.</li>
+                            <li>결과가 나오면 괘의 이름, 상징, 조언을 읽고 지금 내 상황과 어떤 연결이 있는지 차분히 비교해 보세요.</li>
+                        </ol>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">해석 원칙</h3>
+                        <p>주역천재 멍선생은 자극적인 단정 대신 해석과 성찰 중심의 문장을 우선합니다. 건강, 법률, 투자처럼 신중한 판단이 필요한 영역에서 확정적 결론을 대신하지 않으며, 사용자가 자신의 현실 정보를 함께 고려하도록 안내합니다.</p>
+                        <p>또한 사용자가 불안이나 기대에 지나치게 휩쓸리지 않도록 부드럽고 균형 잡힌 어조를 유지합니다. 이 점은 전통 점술을 현대 웹 서비스로 풀어낼 때 가장 중요하게 생각한 운영 기준입니다.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">서비스 소개</h3>
+                        <p><strong>주역천재 멍선생</strong>은 고대 동양의 깊은 지혜인 주역(I Ching)을 현대적인 인공지능 기술과 친근한 강아지 캐릭터를 통해 재해석한 프리미엄 운세 서비스입니다.</p>
+                        <p>저희 서비스는 사용자가 일상에서 마주하는 다양한 고민들을 다정하고 따뜻한 시선으로 바라보고자 합니다. 단순히 미래를 예견하는 것을 넘어, 주역의 64괘가 담고 있는 철학적인 통찰을 통해 사용자가 스스로 답을 찾아갈 수 있도록 영감을 주는 것을 목표로 합니다.</p>
+                        <p><strong>제공 서비스의 특징:</strong></p>
+                        <ul>
+                            <li><strong>개인화된 점괘 분석:</strong> 사용자가 입력한 구체적인 고민 내용을 바탕으로, AI가 해당 시점의 우주적 기운(괘)을 분석하여 맞춤형 조언을 생성합니다.</li>
+                            <li><strong>다양한 강아지 메신저:</strong> 64종의 귀여운 강아지 캐릭터들이 각기 다른 에너지를 담아 사용자에게 운세를 전달하며, 정서적인 위안과 즐거움을 함께 선사합니다.</li>
+                            <li><strong>동양 철학의 대중화:</strong> 어렵게 느껴질 수 있는 주역의 원리를 직관적인 디자인과 쉬운 언어로 풀어내어 누구나 부담 없이 즐길 수 있습니다.</li>
+                        </ul>
+                        <p>주역천재 멍선생은 항상 여러분의 곁에서 다정한 친구처럼, 때로는 지혜로운 조언자처럼 함께하겠습니다. 여러분의 모든 고민이 희망적인 변화의 시작이 되기를 진심으로 기원합니다.</p>
+                    </article>
+                </section>
         `,
         privacyTitle: "개인정보처리방침",
         privacyContent: `
@@ -57,6 +85,7 @@ const i18n = {
         `,
         backHome: "🐾 홈으로 돌아가기 🐾",
         footerCopy: "&copy; 2026 주역천재 멍선생. All rights reserved.",
+        footerNote: "이 사이트의 핵심 목적은 사용자가 주역 해석 콘텐츠를 읽고 자신의 고민을 정리해 보는 경험을 제공하는 것입니다.",
         trigrams: {
             "111": { name: "하늘(天)", desc: "강건하고 창조적인 에너지" },
             "000": { name: "땅(地)", desc: "포용하고 수용하는 안정감" },
@@ -91,15 +120,43 @@ const i18n = {
         visitorLoading: "Loading...",
         aboutTitle: "About Master Meng: I Ching Genius",
         aboutContent: `
-                <p><strong>Master Meng: I Ching Genius</strong> is a premium fortune-telling service that reinterprets I Ching, the deep ancient wisdom of the East, through modern AI technology and friendly dog characters.</p>
-                <p>Our service aims to look at various concerns users face in their daily lives with a kind and warm perspective. Beyond simply predicting the future, we aim to inspire users to find answers themselves through the philosophical insights contained in the 64 hexagrams of the I Ching.</p>
-                <p><strong>Features of Our Service:</strong></p>
-                <ul>
-                    <li><strong>Personalized Fortune Analysis:</strong> Based on the specific concerns entered by the user, AI analyzes the cosmic energy (hexagram) at that point in time to generate tailored advice.</li>
-                    <li><strong>Various Dog Messengers:</strong> 64 types of cute dog characters deliver fortunes with different energies, providing emotional comfort and joy.</li>
-                    <li><strong>Popularization of Eastern Philosophy:</strong> We explain the principles of the I Ching, which can feel difficult, through intuitive design and easy language so anyone can enjoy it without burden.</li>
-                </ul>
-                <p>Master Meng: I Ching Genius will always be with you like a kind friend and sometimes a wise advisor. We sincerely hope all your concerns become the start of a hopeful change.</p>
+                <section class="content-grid">
+                    <article class="content-panel">
+                        <h3 class="section-title">Service Guide</h3>
+                        <p><strong>Master Meng: I Ching Genius</strong> is an interpretive content service that explains the symbols and flow of the I Ching in modern language based on the concern each visitor writes. It is not just a one-click fortune button. The goal is to help users organize a question, reflect on their current situation, and find a clue for their own judgment.</p>
+                        <p>The texts and explanations on this site are built from original editorial copy, service introductions, usage guidance, and interpretation principles. The results include playful elements, but the tone is designed to help users read slowly and think carefully about their situation.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">What This Service Offers</h3>
+                        <p>This service is designed to go beyond a one-time novelty. Users can describe their situation in detail, read the symbolic flow of the hexagram, and reflect again on emotions, relationships, work, and choices in front of them.</p>
+                        <p>The 64 hexagrams represent different patterns of change, balance, conflict, recovery, and growth. We reinterpret those symbols in language that feels readable and relevant in modern daily life.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">How To Use It</h3>
+                        <ol class="feature-list">
+                            <li>Write the situation that weighs on your mind as specifically as possible. A concrete question leads to a more useful interpretation.</li>
+                            <li>Draw each line and wait for the result. This sequence is part of the experience and helps you focus on the question.</li>
+                            <li>When the reading appears, compare the hexagram name, symbols, and advice with your present circumstances.</li>
+                        </ol>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Interpretation Principles</h3>
+                        <p>Master Meng favors reflective language over sensational certainty. For areas such as health, law, or investment, the service does not replace careful real-world judgment and encourages users to consider their own facts as well.</p>
+                        <p>We also keep the tone balanced so that visitors are not pushed toward excessive anxiety or false confidence. That standard is central to how we present traditional divination in a modern web service.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">About the Service</h3>
+                        <p><strong>Master Meng: I Ching Genius</strong> is a premium fortune-telling service that reinterprets I Ching, the deep ancient wisdom of the East, through modern AI technology and friendly dog characters.</p>
+                        <p>Our service aims to look at various concerns users face in their daily lives with a kind and warm perspective. Beyond simply predicting the future, we aim to inspire users to find answers themselves through the philosophical insights contained in the 64 hexagrams of the I Ching.</p>
+                        <p><strong>Features of Our Service:</strong></p>
+                        <ul>
+                            <li><strong>Personalized Fortune Analysis:</strong> Based on the specific concerns entered by the user, AI analyzes the cosmic energy at that point in time to generate tailored guidance.</li>
+                            <li><strong>Various Dog Messengers:</strong> 64 types of cute dog characters deliver fortunes with different energies, providing emotional comfort and joy.</li>
+                            <li><strong>Popularization of Eastern Philosophy:</strong> We explain the principles of the I Ching with intuitive design and accessible language.</li>
+                        </ul>
+                        <p>Master Meng: I Ching Genius will always be with you like a kind friend and sometimes a wise advisor. We sincerely hope all your concerns become the start of a hopeful change.</p>
+                    </article>
+                </section>
         `,
         privacyTitle: "Privacy Policy",
         privacyContent: `
@@ -124,6 +181,7 @@ const i18n = {
         `,
         backHome: "🐾 Back to Home 🐾",
         footerCopy: "&copy; 2026 Master Meng: I Ching Genius. All rights reserved.",
+        footerNote: "The main purpose of this site is to help visitors read I Ching interpretations and organize their thoughts with care.",
         trigrams: {
             "111": { name: "Heaven", desc: "strong and creative energy" },
             "000": { name: "Earth", desc: "stability that accepts everything" },
@@ -154,15 +212,36 @@ const i18n = {
         visitorLoading: "読み込み中...",
         aboutTitle: "周易の天才 メン先生について",
         aboutContent: `
-                <p><strong>周易の天才 メン先生</strong>は、古代東洋の深い知恵である周易（I Ching）を、現代的なAI技術と親しみやすいわんちゃんキャラクターを通じて再解釈したプレミアム占いサービスです。</p>
-                <p>私たちのサービスは、ユーザーが日常生活で直面する様々な悩みを、優しく温かい視点で見守ることを目指しています。単に未来を予言するだけでなく、周易の64卦が持つ哲学的な洞察を通じて、ユーザーが自ら答えを見つけ出せるようインスピレーションを与えることを目標としています。</p>
-                <p><strong>提供サービスの特徴：</strong></p>
-                <ul>
-                    <li><strong>パーソナライズされた占断分析：</strong> ユーザーが入力した具体的な悩み内容に基づき、AIがその時点の宇宙的な気運（卦）を分析し、カスタマイズされたアドバイスを生成します。</li>
-                    <li><strong>多様なわんちゃんメッセンジャー：</strong> 64種類の可愛いわんちゃんキャラクターが、それぞれ異なるエネルギーを込めてユーザーに運勢を届け、情緒的な慰めと楽しさを提供します。</li>
-                    <li><strong>東洋哲学の大衆化：</strong> 難しく感じられがちな周易の原理を、直感的なデザインと分かりやすい言葉で解き明かし、誰でも気軽に楽しめるようにしました。</li>
-                </ul>
-                <p>周易の天才 メン先生は、いつもあなたのそばで優しい友人のように、時には賢い助言者のように寄り添います。あなたのすべての悩みが、希望に満ちた変化の始まりとなることを心から願っています。</p>
+                <section class="content-grid">
+                    <article class="content-panel">
+                        <h3 class="section-title">サービス案内</h3>
+                        <p><strong>周易の天才 メン先生</strong>は、利用者が入力した悩みをもとに、周易の象徴と流れを現代的な言葉で解きほぐして伝える解釈型コンテンツサービスです。結果だけを見せる占いボタンではなく、問いを整理し、今の状況を見つめ直し、自分で判断の糸口を見つける手助けを目指しています。</p>
+                        <p>このサイトの文章や解説は、独自に企画した紹介文、利用ガイド、解釈方針をもとに構成されています。遊び心はありつつも、利用者が落ち着いて読み、考えられるように語り口を整えています。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">このサービスが提供するもの</h3>
+                        <p>このサービスは、一度きりの軽い遊びで終わらないように設計されています。利用者は自分の状況を具体的に書き、卦が示す流れを読みながら、感情、人間関係、仕事、選択肢を改めて見つめ直すことができます。</p>
+                        <p>周易の64卦には、変化、均衡、衝突、回復、成長といったさまざまな場面のイメージが含まれています。私たちはその象徴を現代の日常に結びつく言葉で届けています。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">利用方法</h3>
+                        <ol class="feature-list">
+                            <li>今いちばん気になっている状況を、できるだけ具体的に書いてください。具体的な問いほど、解釈も実感に近づきます。</li>
+                            <li>爻を一つずつ引きながら結果を待ってください。この流れ自体が問いに集中する時間になります。</li>
+                            <li>結果が表示されたら、卦の名前、象徴、助言を今の自分の状況と静かに照らし合わせてみてください。</li>
+                        </ol>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">解釈の原則</h3>
+                        <p>メン先生は、刺激的な断言よりも、内省を促す穏やかな表現を優先します。健康、法律、投資のように慎重な判断が必要な領域では、現実の情報とあわせて考えることを勧めています。</p>
+                        <p>また、不安や過度な期待をあおらないよう、全体の語り口をできるだけ均衡の取れたものにしています。これは伝統的な占いを現代のウェブサービスとして扱ううえでの重要な方針です。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">サービス紹介</h3>
+                        <p><strong>周易の天才 メン先生</strong>は、古代東洋の深い知恵である周易を、現代的なAI技術と親しみやすいわんちゃんキャラクターを通じて再解釈したプレミアム占いサービスです。</p>
+                        <p>私たちのサービスは、日常生活で直面するさまざまな悩みを、優しく温かい視点で見守ることを目指しています。単に未来を予言するだけでなく、64卦が持つ哲学的な洞察を通して、利用者が自分で答えを見つけるきっかけを届けたいと考えています。</p>
+                    </article>
+                </section>
         `,
         privacyTitle: "プライバシーポリシー",
         privacyContent: `
@@ -187,6 +266,7 @@ const i18n = {
         `,
         backHome: "🐾 ホームへ戻る 🐾",
         footerCopy: "&copy; 2026 周易の天才 メン先生. All rights reserved.",
+        footerNote: "このサイトの主な目的は、周易の解釈を読みながら自分の考えを整理する体験を提供することです。",
         qPrefix: "Q. ",
         empathy: "あなたの悩みをじっと見つめていると、これまでどれほど心を砕いてきたかが伝わってきて、私も胸が熱くなります。さあ、周易の知恵を借りて、一緒に道を探してみましょう。",
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `あなたが引いた運勢は、下卦の**${lower}**と上卦の**${upper}**が合わさった組み合わせだよ。`,
@@ -221,15 +301,36 @@ const i18n = {
         visitorLoading: "加载中...",
         aboutTitle: "关于孟老师，周易奇才",
         aboutContent: `
-                <p><strong>孟老师，周易奇才</strong>是一款高端占卜服务，通过现代人工智能技术和亲切的狗狗形象，重新诠释了古代东方的深邃智慧——周易（I Ching）。</p>
-                <p>我们的服务旨在以亲切温情的视角，关注用户在日常生活中面临的各种烦恼。除了简单的预知未来，我们更希望通过周易六十四卦中所蕴含的哲学洞察，启发用户自己找到答案。</p>
-                <p><strong>服务特色：</strong></p>
-                <ul>
-                    <li><strong>个性化卦象分析：</strong> AI 根据用户输入的具体烦恼，分析那一时刻的宇宙气场（卦象），生成定制化的建议。</li>
-                    <li><strong>多样化的狗狗信使：</strong> 64 种可爱的狗狗角色承载着不同的能量为用户传递运势，带来情感上的慰藉和乐趣。</li>
-                    <li><strong>东方哲学的普及：</strong> 我们通过直观的设计和通俗易懂的语言，将原本深奥的周易原理呈现出来，让任何人都能轻松体验。</li>
-                </ul>
-                <p>孟老师，周易奇才，将像亲切的朋友，有时又像睿智的导师一样，始终陪伴在您身边。衷心祝愿您的每一个烦恼都能成为希望变化的开始。</p>
+                <section class="content-grid">
+                    <article class="content-panel">
+                        <h3 class="section-title">服务说明</h3>
+                        <p><strong>孟老师，周易奇才</strong>是一项解读型内容服务，会根据访客亲自输入的烦恼，用现代语言解释周易中的象征与变化脉络。它不只是一个显示结果的占卜按钮，而是希望帮助用户整理问题、回看现状，并找到属于自己的判断线索。</p>
+                        <p>网站中的介绍文字、使用说明和解读原则都由站点主动策划整理。结果保留轻松感，但整体语气以便于认真阅读和思考为目标。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">本服务提供什么</h3>
+                        <p>这项服务并不是一次性的新奇体验。用户可以更具体地描述自己的处境，再通过卦象的变化重新思考情绪、关系、工作与选择。</p>
+                        <p>周易六十四卦包含变化、平衡、冲突、恢复与成长等不同情境。我们将这些象征转化成更适合现代日常阅读的表达。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">使用方法</h3>
+                        <ol class="feature-list">
+                            <li>请尽量具体地写下你当前最在意的问题。问题越具体，解读通常越有帮助。</li>
+                            <li>逐条抽取爻线并等待结果。这个过程本身就是帮助你集中注意力的一部分。</li>
+                            <li>结果出现后，请把卦名、象征和建议与自己眼前的现实情况慢慢对照。</li>
+                        </ol>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">解读原则</h3>
+                        <p>孟老师更重视反思性的表达，而不是刺激性的绝对断言。对于健康、法律、投资等需要谨慎判断的领域，本服务不会替代现实中的专业判断。</p>
+                        <p>同时，我们也尽量避免放大焦虑或制造过度期待。这是我们将传统占卜放入现代网站时坚持的基本原则。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">服务介绍</h3>
+                        <p><strong>孟老师，周易奇才</strong>是一款高端占卜服务，通过现代人工智能技术和亲切的狗狗形象，重新诠释古代东方的深邃智慧周易。</p>
+                        <p>我们的服务希望以温暖亲切的视角，陪伴用户面对日常生活中的各种烦恼。除了预知意味之外，我们更重视借由六十四卦的哲学洞察，启发用户自己找到答案。</p>
+                    </article>
+                </section>
         `,
         privacyTitle: "隐私政策",
         privacyContent: `
@@ -254,6 +355,7 @@ const i18n = {
         `,
         backHome: "🐾 返回首页 🐾",
         footerCopy: "&copy; 2026 孟老师，周易奇才. All rights reserved.",
+        footerNote: "本网站的主要目的，是帮助访客阅读周易解读内容并认真整理自己的想法。",
         qPrefix: "问. ",
         empathy: "静静地看着你的烦恼，我能感受到你这段时间付出了多少心血。现在，让我们借助周易的智慧，一起寻找出路吧。",
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `你抽到的运势是下卦 **${lower}** 和上卦 **${upper}** 的组合。`,
@@ -293,15 +395,36 @@ const i18n = {
         visitorLoading: "Chargement...",
         aboutTitle: "À propos de Maître Meng, prodige du Yi Jing",
         aboutContent: `
-                <p><strong>Maître Meng, prodige du Yi Jing</strong> est un service de divination premium qui réinterprète le Yi Jing, l'une des grandes sagesses de l'Orient, à travers l'IA moderne et des chiens attachants.</p>
-                <p>Notre service accompagne les préoccupations du quotidien avec un regard chaleureux et attentionné. Au-delà d'une simple prédiction, nous voulons offrir une inspiration concrète pour t'aider à trouver tes propres réponses à partir des 64 hexagrammes.</p>
-                <p><strong>Caractéristiques du service :</strong></p>
-                <ul>
-                    <li><strong>Analyse personnalisée :</strong> l'IA étudie ton souci précis et l'énergie du tirage pour formuler un conseil adapté.</li>
-                    <li><strong>Messagers canins variés :</strong> 64 chiens adorables transmettent la lecture avec des ambiances différentes et une touche de réconfort.</li>
-                    <li><strong>Philosophie orientale accessible :</strong> nous expliquons le Yi Jing avec un langage simple et une présentation intuitive pour le rendre agréable à découvrir.</li>
-                </ul>
-                <p>Maître Meng, prodige du Yi Jing, veut rester à tes côtés comme un ami doux et lucide. Nous espérons que chacune de tes questions devienne le début d'un changement porteur d'espoir.</p>
+                <section class="content-grid">
+                    <article class="content-panel">
+                        <h3 class="section-title">Présentation du service</h3>
+                        <p><strong>Maître Meng, prodige du Yi Jing</strong> est un service éditorial d'interprétation qui explique les symboles et les mouvements du Yi Jing dans un langage actuel à partir de la préoccupation écrite par l'utilisateur. Ce n'est pas seulement un bouton de divination, mais un espace pour clarifier une question et réfléchir à sa situation.</p>
+                        <p>Les textes du site, les explications et les principes d'interprétation sont rédigés pour offrir une lecture claire, douce et utile. Le ton reste léger, mais il est conçu pour favoriser une réflexion attentive.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Ce que le service apporte</h3>
+                        <p>Le site ne cherche pas à proposer une simple curiosité de passage. Il invite l'utilisateur à décrire sa situation, à lire la dynamique de l'hexagramme et à reconsidérer ses émotions, ses relations, son travail et ses choix.</p>
+                        <p>Les 64 hexagrammes portent chacun des images de changement, d'équilibre, de conflit, de reprise et de croissance. Nous les reformulons dans un langage plus proche de la vie quotidienne actuelle.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Mode d'emploi</h3>
+                        <ol class="feature-list">
+                            <li>Décris aussi précisément que possible la situation qui t'occupe. Une question concrète mène souvent à une lecture plus parlante.</li>
+                            <li>Tire les lignes une par une et attends le résultat. Ce rythme fait partie de l'expérience et aide à se concentrer.</li>
+                            <li>Quand la lecture apparaît, compare le nom de l'hexagramme, ses symboles et le conseil avec ta situation actuelle.</li>
+                        </ol>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Principes d'interprétation</h3>
+                        <p>Le service privilégie une lecture réfléchie plutôt que des affirmations excessives. Dans des domaines comme la santé, le droit ou l'investissement, il ne remplace pas un jugement prudent fondé sur la réalité.</p>
+                        <p>Nous veillons aussi à ne pas amplifier inutilement l'anxiété ou les attentes. Cet équilibre fait partie de notre manière de présenter une tradition ancienne sur le web moderne.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">À propos du service</h3>
+                        <p><strong>Maître Meng, prodige du Yi Jing</strong> est un service de divination premium qui réinterprète le Yi Jing grâce à l'IA moderne et à des chiens attachants.</p>
+                        <p>Notre service accompagne les préoccupations du quotidien avec un regard chaleureux et attentionné. Au-delà d'une simple prédiction, nous voulons offrir une inspiration concrète pour aider chacun à trouver ses propres réponses.</p>
+                    </article>
+                </section>
         `,
         privacyTitle: "Politique de confidentialité",
         privacyContent: `
@@ -326,6 +449,7 @@ const i18n = {
         `,
         backHome: "🐾 Retour à l'accueil 🐾",
         footerCopy: "&copy; 2026 Maître Meng, prodige du Yi Jing. All rights reserved.",
+        footerNote: "L'objectif principal de ce site est d'aider les visiteurs à lire des interprétations du Yi Jing et à mettre leurs pensées en ordre.",
         trigrams: {
             "111": { name: "Ciel", desc: "une énergie forte et créatrice" },
             "000": { name: "Terre", desc: "une stabilité accueillante et réceptive" },
@@ -361,15 +485,36 @@ const i18n = {
         visitorLoading: "Laden...",
         aboutTitle: "Über Meister Meng, das Genie des I Ging",
         aboutContent: `
-                <p><strong>Meister Meng, das Genie des I Ging</strong> ist ein hochwertiger Orakelservice, der das I Ging, die tiefe Weisheit Ostasiens, mit moderner KI und freundlichen Hundebegleitern neu interpretiert.</p>
-                <p>Unser Ziel ist es, alltägliche Sorgen mit einem warmen und aufmerksamen Blick zu betrachten. Statt nur Zukunft vorherzusagen, möchten wir durch die 64 Hexagramme Inspiration geben, damit du eigene Antworten finden kannst.</p>
-                <p><strong>Besondere Merkmale:</strong></p>
-                <ul>
-                    <li><strong>Persönliche Deutung:</strong> Die KI analysiert dein konkretes Anliegen und die Energie des gezogenen Zeichens, um passende Hinweise zu formulieren.</li>
-                    <li><strong>Vielfältige Hundeboten:</strong> 64 charmante Hunde überbringen die Botschaft jeweils mit eigener Stimmung und tröstender Präsenz.</li>
-                    <li><strong>Leicht zugängliche Philosophie:</strong> Wir erklären das I Ging mit verständlicher Sprache und einem intuitiven Aufbau, damit es ohne Hürde erlebt werden kann.</li>
-                </ul>
-                <p>Meister Meng, das Genie des I Ging, möchte dich wie ein freundlicher Begleiter und gelegentlich wie ein kluger Ratgeber unterstützen. Wir hoffen, dass jede deiner Fragen zu einem hoffnungsvollen Wandel führt.</p>
+                <section class="content-grid">
+                    <article class="content-panel">
+                        <h3 class="section-title">Serviceübersicht</h3>
+                        <p><strong>Meister Meng, das Genie des I Ging</strong> ist ein interpretierender Inhaltsdienst, der die Symbole und Bewegungen des I Ging in heutiger Sprache erklärt. Ausgangspunkt ist jeweils das Anliegen, das der Nutzer selbst eingibt. Ziel ist nicht nur ein Ergebnis anzuzeigen, sondern beim Ordnen der Frage und der eigenen Situation zu helfen.</p>
+                        <p>Die Texte, Hinweise und Deutungsgrundsätze auf dieser Seite sind redaktionell aufgebaut. Der Ton bleibt freundlich und leicht, ist aber auf ruhiges Lesen und Nachdenken ausgerichtet.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Was der Dienst bietet</h3>
+                        <p>Der Dienst ist nicht nur als kurzer Unterhaltungsmoment gedacht. Nutzer können ihre Lage genauer beschreiben, den Verlauf des Hexagramms lesen und Gefühle, Beziehungen, Arbeit und Entscheidungen neu betrachten.</p>
+                        <p>Die 64 Hexagramme stehen für Veränderungen, Gleichgewicht, Konflikt, Erholung und Wachstum. Wir übertragen diese Bilder in eine Sprache, die im heutigen Alltag leichter zugänglich ist.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">So wird es genutzt</h3>
+                        <ol class="feature-list">
+                            <li>Beschreibe möglichst konkret, was dich beschäftigt. Je klarer die Frage, desto hilfreicher ist meist die Deutung.</li>
+                            <li>Ziehe die Linien nacheinander und warte auf das Ergebnis. Dieser Ablauf hilft, sich auf das Anliegen zu konzentrieren.</li>
+                            <li>Vergleiche anschließend Name, Symbole und Hinweise des Hexagramms mit deiner aktuellen Situation.</li>
+                        </ol>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Deutungsprinzipien</h3>
+                        <p>Der Dienst setzt auf nachdenkliche Formulierungen statt auf überzogene Gewissheit. In Bereichen wie Gesundheit, Recht oder Finanzen ersetzt er keine sorgfältige reale Entscheidung.</p>
+                        <p>Außerdem vermeiden wir unnötige Angstmache oder falsche Sicherheit. Dieses Gleichgewicht ist ein zentraler Teil unseres Ansatzes.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Über den Dienst</h3>
+                        <p><strong>Meister Meng, das Genie des I Ging</strong> ist ein hochwertiger Orakelservice, der die tiefe Weisheit des I Ging mit moderner KI und freundlichen Hundebegleitern neu interpretiert.</p>
+                        <p>Unser Ziel ist es, alltägliche Sorgen mit einem warmen und aufmerksamen Blick zu betrachten und über die 64 Hexagramme Inspiration für eigene Antworten zu geben.</p>
+                    </article>
+                </section>
         `,
         privacyTitle: "Datenschutzerklärung",
         privacyContent: `
@@ -394,6 +539,7 @@ const i18n = {
         `,
         backHome: "🐾 Zurück zur Startseite 🐾",
         footerCopy: "&copy; 2026 Meister Meng, das Genie des I Ging. All rights reserved.",
+        footerNote: "Der Hauptzweck dieser Seite ist es, Besuchern beim Lesen von I-Ging-Deutungen und beim Ordnen ihrer Gedanken zu helfen.",
         trigrams: {
             "111": { name: "Himmel", desc: "eine starke und schöpferische Energie" },
             "000": { name: "Erde", desc: "eine aufnehmende und tragende Stabilität" },
@@ -429,15 +575,36 @@ const i18n = {
         visitorLoading: "Cargando...",
         aboutTitle: "Sobre Maestro Meng: genio del I Ching",
         aboutContent: `
-                <p><strong>Maestro Meng: genio del I Ching</strong> es un servicio premium de lectura que reinterpreta el I Ching, una sabiduría oriental profunda, con tecnología de IA moderna y entrañables perros mensajeros.</p>
-                <p>Queremos mirar las preocupaciones cotidianas con una perspectiva cálida y cercana. Más allá de predecir el futuro, buscamos inspirarte para que encuentres tus propias respuestas a través de los 64 hexagramas.</p>
-                <p><strong>Características del servicio:</strong></p>
-                <ul>
-                    <li><strong>Análisis personalizado:</strong> la IA estudia tu inquietud concreta y la energía del hexagrama para ofrecerte una orientación adaptada.</li>
-                    <li><strong>Mensajeros perrunos variados:</strong> 64 perros adorables transmiten la lectura con distintas energías, ternura y consuelo.</li>
-                    <li><strong>Filosofía oriental accesible:</strong> explicamos el I Ching con un lenguaje claro y un diseño intuitivo para que cualquiera pueda disfrutarlo sin dificultad.</li>
-                </ul>
-                <p>Maestro Meng: genio del I Ching quiere acompañarte como un amigo amable y, a veces, como un consejero sabio. Deseamos que cada una de tus dudas se convierta en el inicio de un cambio esperanzador.</p>
+                <section class="content-grid">
+                    <article class="content-panel">
+                        <h3 class="section-title">Guía del servicio</h3>
+                        <p><strong>Maestro Meng: genio del I Ching</strong> es un servicio de contenido interpretativo que explica los símbolos y el movimiento del I Ching con lenguaje actual a partir de la inquietud escrita por cada visitante. No busca solo mostrar un resultado, sino ayudar a ordenar la pregunta y mirar la situación con más claridad.</p>
+                        <p>Los textos, las explicaciones y los criterios de interpretación del sitio están preparados como contenido editorial propio. El tono mantiene ligereza, pero prioriza una lectura tranquila y reflexiva.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Qué ofrece este servicio</h3>
+                        <p>El servicio no está pensado como una curiosidad momentánea. Permite describir mejor la situación, leer el sentido del hexagrama y volver a pensar en emociones, relaciones, trabajo y decisiones.</p>
+                        <p>Los 64 hexagramas representan cambios, equilibrio, conflicto, recuperación y crecimiento. Nosotros traducimos esos símbolos a un lenguaje más cercano a la vida diaria actual.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Cómo usarlo</h3>
+                        <ol class="feature-list">
+                            <li>Escribe con la mayor precisión posible la situación que te preocupa. Una pregunta concreta suele dar una lectura más útil.</li>
+                            <li>Saca las líneas una por una y espera el resultado. Ese ritmo también forma parte de la experiencia.</li>
+                            <li>Cuando aparezca la lectura, compara el nombre del hexagrama, sus símbolos y el consejo con tu situación actual.</li>
+                        </ol>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Principios de interpretación</h3>
+                        <p>El servicio prefiere un lenguaje reflexivo antes que afirmaciones exageradas. En temas como salud, derecho o inversión, no sustituye una decisión prudente basada en la realidad.</p>
+                        <p>También evitamos aumentar la ansiedad o crear expectativas falsas. Ese equilibrio es parte esencial de nuestra forma de presentar esta tradición en la web.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Sobre el servicio</h3>
+                        <p><strong>Maestro Meng: genio del I Ching</strong> es un servicio premium que reinterpreta el I Ching con tecnología de IA moderna y entrañables perros mensajeros.</p>
+                        <p>Queremos mirar las preocupaciones cotidianas con una perspectiva cálida y cercana, e inspirar a cada persona para que encuentre sus propias respuestas a través de los hexagramas.</p>
+                    </article>
+                </section>
         `,
         privacyTitle: "Política de privacidad",
         privacyContent: `
@@ -462,6 +629,7 @@ const i18n = {
         `,
         backHome: "🐾 Volver al inicio 🐾",
         footerCopy: "&copy; 2026 Maestro Meng: genio del I Ching. All rights reserved.",
+        footerNote: "La finalidad principal de este sitio es ayudar a los visitantes a leer interpretaciones del I Ching y ordenar sus pensamientos con calma.",
         trigrams: {
             "111": { name: "Cielo", desc: "una energía fuerte y creadora" },
             "000": { name: "Tierra", desc: "una estabilidad receptiva que acoge" },
@@ -547,6 +715,7 @@ const VISITOR_COUNTER_URL = 'https://us-central1-bookofchange-71fed.cloudfunctio
 
 // Select elements
 let titleEl, subtitleEl, labelConcernEl, concernInputEl, startButtonEl, retryButtonEl, disclaimerTextEl, footerCopyEl;
+let footerNoteEl;
 let navHomeEl, navAboutEl, navPrivacyEl, aboutTitleEl, privacyTitleEl, aboutContentEl, privacyContentEl;
 let visitorCounterEl, visitorCounterLabelEl, visitorCounterValueEl;
 let backHomeButtons;
@@ -567,6 +736,7 @@ function updateUI() {
     if (retryButtonEl) retryButtonEl.textContent = t.retryButton;
     if (disclaimerTextEl) disclaimerTextEl.textContent = t.disclaimer;
     if (footerCopyEl) footerCopyEl.innerHTML = t.footerCopy;
+    if (footerNoteEl && t.footerNote) footerNoteEl.textContent = t.footerNote;
 
     if (navHomeEl) navHomeEl.textContent = t.navHome;
     if (navAboutEl) navAboutEl.textContent = t.navAbout;
@@ -666,6 +836,7 @@ document.addEventListener('DOMContentLoaded', () => {
     retryButtonEl = document.getElementById('retry-button');
     disclaimerTextEl = document.getElementById('disclaimer-text');
     footerCopyEl = document.getElementById('footer-copy');
+    footerNoteEl = document.getElementById('footer-note');
 
     navHomeEl = document.getElementById('nav-home');
     navAboutEl = document.getElementById('nav-about');
