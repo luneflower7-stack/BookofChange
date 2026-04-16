@@ -712,6 +712,7 @@ let visitorCountState = 'loading';
 
 const VISITOR_COUNTER_STORAGE_KEY = 'paw-iching-visitor-counted-v1';
 const VISITOR_COUNTER_URL = 'https://us-central1-bookofchange-71fed.cloudfunctions.net/getVisitorCount';
+const ADSENSE_CLIENT_ID = 'ca-pub-3074209859520017';
 
 // Select elements
 let titleEl, subtitleEl, labelConcernEl, concernInputEl, startButtonEl, retryButtonEl, disclaimerTextEl, footerCopyEl;
@@ -719,6 +720,31 @@ let footerNoteEl;
 let navHomeEl, navAboutEl, navPrivacyEl, aboutTitleEl, privacyTitleEl, aboutContentEl, privacyContentEl;
 let visitorCounterEl, visitorCounterLabelEl, visitorCounterValueEl;
 let backHomeButtons;
+
+function hasPublisherContent() {
+    const mainContainer = document.getElementById('main-container');
+    const homeView = document.getElementById('home-view');
+    if (!mainContainer || !homeView) return false;
+
+    const combinedText = (mainContainer.innerText || '').replace(/\s+/g, ' ').trim();
+    return combinedText.length >= 300 && homeView.querySelector('#publisher-content');
+}
+
+function loadAdSenseScriptIfEligible() {
+    if (!hasPublisherContent()) {
+        console.warn('AdSense deferred because publisher content was not detected.');
+        return;
+    }
+
+    if (document.querySelector('script[data-adsense-loader="true"]')) return;
+
+    const adScript = document.createElement('script');
+    adScript.async = true;
+    adScript.crossOrigin = 'anonymous';
+    adScript.dataset.adsenseLoader = 'true';
+    adScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`;
+    document.head.appendChild(adScript);
+}
 
 function updateUI() {
     console.log("Updating UI for:", currentLang);
@@ -913,6 +939,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateUI();
     syncVisitorCount();
+    window.requestAnimationFrame(loadAdSenseScriptIfEligible);
 });
 
 async function generateFortune(userConcern, guaInfo) {
