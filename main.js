@@ -188,12 +188,12 @@ const i18n = {
                         <p>When a visitor enters a question on the home screen, the result page provides the hexagram name, symbols, interpretation direction, and advisory text together. The About and Privacy pages also explain the operating principles and purpose of the service in detail.</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">Editorial Principles</h3>
+                        <h3 class="section-title">Content Operation Principles</h3>
                         <p>The publisher content on this site favors reflection and interpretation over sensational certainty. In subjects that require caution, such as health, law, or investment, it does not offer definitive conclusions and instead encourages visitors to read alongside real-world facts.</p>
                         <p>We also aim to explain I Ching symbolism in modern language so that visitors have a genuine reading experience rather than only a brief interactive gimmick.</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">How the Experience Works</h3>
+                        <h3 class="section-title">User Flow Guide</h3>
                         <ol class="feature-list">
                             <li>Write the situation that concerns you as specifically as possible.</li>
                             <li>Draw each line one by one and take a moment to focus on the question.</li>
@@ -290,17 +290,17 @@ const i18n = {
         publisherContent: `
                 <div class="content-grid">
                     <article class="content-panel">
-                        <h2 id="publisher-content-title" class="section-title">このサイトで読める内容</h2>
+                        <h2 id="publisher-content-title" class="section-title">このサイトが提供する読み物</h2>
                         <p><strong>周易の天才 メン先生</strong>は、ボタンを押して終わるだけの占いページではありません。利用者が悩みを言葉にし、周易の解釈コンテンツを読みながら、今の状況を静かに見つめ直せるように設計された解釈型コンテンツサービスです。</p>
                         <p>ホーム画面で質問を入力すると、結果画面では卦の名前、象徴、解釈の方向性、助言の文章を一緒に案内します。紹介ページとプライバシーページでも、運営方針とサービスの目的を詳しく説明しています。</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">コンテンツ運営方針</h3>
+                        <h3 class="section-title">コンテンツ運営原則</h3>
                         <p>このサイトの掲載コンテンツは、刺激的な断言よりも、内省と解釈を重視した文章で構成されています。健康、法律、投資のように慎重さが必要なテーマでは、断定的な結論を出さず、現実の情報とあわせて読むよう案内します。</p>
                         <p>また、周易の象徴を現代の言葉でわかりやすく伝え、短い仕掛けで終わらない読みごたえのある本文体験を作ることを大切にしています。</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">利用の流れ</h3>
+                        <h3 class="section-title">利用フローのご案内</h3>
                         <ol class="feature-list">
                             <li>今いちばん気になっている状況を、できるだけ具体的に書きます。</li>
                             <li>爻を一つずつ引きながら、質問に意識を向ける時間を持ちます。</li>
@@ -321,7 +321,7 @@ const i18n = {
                 <p><strong>3. 個人情報の保有および利用期間</strong><br>
                 入力された悩み内容は、占断結果が生成されユーザーに表示されている間のみセッション上で一時的に保持され、サービス利用終了時に直ちに破棄されます。サーバーに永久に保存されることはありません。</p>
                 
-                <p><strong>4. 個人情報の第三者提供および委託</strong><br>
+                <p><strong>4. 個人情報の third-party 提供および委託</strong><br>
                 本サービスは、AI回答生成のためにユーザーが入力したテキストを外部API（OpenAIなど）に送信することがあります。この過程で個人を特定できる情報は含まれず、当該業者は情報保護のための厳格な基準を遵守しています。</p>
                 
                 <p><strong>5. クッキー（Cookie）および広告の運用</strong><br>
@@ -382,7 +382,7 @@ const i18n = {
                         <h3 class="section-title">使用方法</h3>
                         <ol class="feature-list">
                             <li>请尽量具体地写下你当前最在意的问题。问题越具体，解读通常越有帮助。</li>
-                            <li>逐条抽取爻线并等待结果。这个过程本身就是帮助你集中注意力的一部分。</li>
+                            <li>逐条抽取爻线并等待结果.这个过程本身就是帮助你集中注意力的一部分。</li>
                             <li>结果出现后，请把卦名、象征和建议与自己眼前的现实情况慢慢对照。</li>
                         </ol>
                     </article>
@@ -517,17 +517,17 @@ const i18n = {
         publisherContent: `
                 <div class="content-grid">
                     <article class="content-panel">
-                        <h2 id="publisher-content-title" class="section-title">Ce que l'on peut lire sur ce site</h2>
+                        <h2 id="publisher-content-title" class="section-title">Contenus de lecture proposés par ce site</h2>
                         <p><strong>Maître Meng, prodige du Yi Jing</strong> n'est pas seulement une page où l'on clique sur un bouton avant de repartir. C'est un service éditorial d'interprétation conçu pour aider les visiteurs à formuler leur préoccupation, lire un contenu inspiré du Yi Jing et réfléchir plus calmement à leur situation.</p>
-                        <p>Quand une question est saisie sur la page d'accueil, la page de résultat présente ensemble le nom de l'hexagramme, ses symboles, l'orientation de lecture et le texte de conseil. Les pages de présentation et de confidentialité détaillent aussi les principes du service.</p>
+                        <p>Quand une question est saisie sur la page d'accueil, la page de resultats présente ensemble le nom de l'hexagramme, ses symboles, l'orientation de lecture et le texte de conseil. Les pages de présentation et de confidentialité détaillent aussi les principes du service.</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">Principes éditoriaux</h3>
+                        <h3 class="section-title">Principes de gestion des contenus</h3>
                         <p>Le contenu publié sur ce site privilégie la réflexion et l'interprétation plutôt que les certitudes sensationnalistes. Pour des sujets qui demandent de la prudence, comme la santé, le droit ou l'investissement, le site n'avance pas de conclusion définitive et invite à lire avec les faits concrets.</p>
                         <p>Nous cherchons aussi à expliquer les symboles du Yi Jing dans une langue actuelle, afin d'offrir une vraie expérience de lecture et non un simple effet interactif de quelques secondes.</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">Déroulement de l'expérience</h3>
+                        <h3 class="section-title">Guide du flux d'utilisation</h3>
                         <ol class="feature-list">
                             <li>Décris aussi précisément que possible la situation qui t'occupe.</li>
                             <li>Tire les lignes une par une en gardant ton attention sur la question.</li>
@@ -629,17 +629,17 @@ const i18n = {
         publisherContent: `
                 <div class="content-grid">
                     <article class="content-panel">
-                        <h2 id="publisher-content-title" class="section-title">Was man auf dieser Seite lesen kann</h2>
+                        <h2 id="publisher-content-title" class="section-title">Von dieser Seite bereitgestellte Lesematerialien</h2>
                         <p><strong>Meister Meng, das Genie des I Ging</strong> ist nicht nur eine Seite, auf der man kurz einen Knopf drückt. Es ist ein interpretierender Inhaltsdienst, der Besuchern helfen soll, ihr Anliegen in Worte zu fassen, I-Ging-Deutungen zu lesen und die eigene Situation ruhiger zu betrachten.</p>
                         <p>Wenn auf der Startseite eine Frage eingegeben wird, zeigt die Ergebnisansicht den Namen des Hexagramms, seine Symbole, die Deutungsrichtung und die Hinweise gemeinsam an. Auch die Seiten über den Dienst und zum Datenschutz erläutern die Grundsätze und den Zweck des Angebots.</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">Redaktionelle Grundsätze</h3>
+                        <h3 class="section-title">Grundsätze des Inhaltsbetriebs</h3>
                         <p>Die veröffentlichten Inhalte setzen auf Reflexion und Deutung statt auf sensationelle Gewissheit. Bei Themen wie Gesundheit, Recht oder Investitionen, die Vorsicht verlangen, gibt die Seite keine endgültigen Urteile vor, sondern verweist auf die reale Sachlage.</p>
                         <p>Außerdem erklären wir die Symbole des I Ging in moderner Sprache, damit Besucher echten Lesestoff erhalten und nicht nur einen kurzen interaktiven Effekt.</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">So läuft die Nutzung ab</h3>
+                        <h3 class="section-title">Leitfaden zum Nutzungsablauf</h3>
                         <ol class="feature-list">
                             <li>Schreibe möglichst konkret auf, was dich im Moment beschäftigt.</li>
                             <li>Ziehe die Linien nacheinander und richte deine Aufmerksamkeit auf die Frage.</li>
@@ -675,7 +675,7 @@ const i18n = {
         trigrams: {
             "111": { name: "Himmel", desc: "eine starke und schöpferische Energie" },
             "000": { name: "Erde", desc: "eine aufnehmende und tragende Stabilität" },
-            "100": { name: "Donner", desc: "ein neuer Anfang und kraftvolle Bewegung" },
+            "100": { name: "Donner", desc: "ein neuer Anfang und kraftvolle movement" },
             "011": { name: "Wind", desc: "ein sanfter Einfluss, der sich ausbreitet" },
             "010": { name: "Wasser", desc: "Weisheit, die selbst durch Schwierigkeiten weiterfließt" },
             "101": { name: "Feuer", desc: "klare Einsicht und leuchtende Ergebnisse" },
@@ -698,7 +698,7 @@ const i18n = {
         qPrefix: "P. ",
         empathy: "Puedo sentir cuánto has pensado en este tema y cuánta sinceridad hay en tu corazón. Mereces una respuesta cálida y clara. Vamos a mirar tu camino junto a la sabiduría del I Ching.",
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `Tu lectura une el trigrama inferior **${lower}** con el trigrama superior **${upper}**. Muestra ${upperDesc} desplegándose sobre ${lowerDesc}.`,
-        defaultHexName: "Hexagrama misterioso",
+        defaultHexName: "Hexagramma misterioso",
         fallbackAdvice: "Ten un poco más de paciencia y espera el momento adecuado.",
         navHome: "Inicio",
         navAbout: "Información",
@@ -741,17 +741,17 @@ const i18n = {
         publisherContent: `
                 <div class="content-grid">
                     <article class="content-panel">
-                        <h2 id="publisher-content-title" class="section-title">Qué se puede leer en este sitio</h2>
+                        <h2 id="publisher-content-title" class="section-title">Materiales de lectura proporcionados por este sitio</h2>
                         <p><strong>Maestro Meng: genio del I Ching</strong> no es solo una página donde se pulsa un botón y termina todo. Es un servicio de contenido interpretativo pensado para que cada visitante escriba su inquietud, lea interpretaciones del I Ching y observe su situación con más calma.</p>
                         <p>Cuando una persona introduce una pregunta en la pantalla principal, la página de resultado muestra el nombre del hexagrama, sus símbolos, la dirección de la interpretación y el texto de consejo. Las páginas de información y privacidad también explican con detalle los principios y el propósito del servicio.</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">Principios editoriales</h3>
+                        <h3 class="section-title">Principios de operación de contenidos</h3>
                         <p>El contenido publicado en este sitio prioriza la reflexión y la interpretación por encima de las afirmaciones sensacionalistas. En temas como salud, derecho o inversión, que requieren cautela, no ofrece conclusiones definitivas y anima a leer junto con los hechos reales.</p>
                         <p>También buscamos explicar los símbolos del I Ching con lenguaje actual para que la experiencia sea una lectura real y no solo un efecto interactivo pasajero.</p>
                     </article>
                     <article class="content-panel">
-                        <h3 class="section-title">Cómo funciona la experiencia</h3>
+                        <h3 class="section-title">Guía de flujo de uso</h3>
                         <ol class="feature-list">
                             <li>Escribe con el mayor detalle posible la situación que más te preocupa.</li>
                             <li>Saca las líneas una por una y mantén la atención puesta en la pregunta.</li>
