@@ -183,7 +183,7 @@ const i18n = {
         publisherContent: `
                 <div class="content-grid">
                     <article class="content-panel">
-                        <h2 id="publisher-content-title" class="section-title">What You Can Read on This Site</h2>
+                        <h2 id="publisher-content-title" class="section-title">Reading Materials Provided by This Site</h2>
                         <p><strong>Master Meng: I Ching Genius</strong> is not just a page where you press a button and leave. It is an interpretive content service designed to help visitors write down their concerns, read I Ching interpretations, and reflect on their present situation with more care.</p>
                         <p>When a visitor enters a question on the home screen, the result page provides the hexagram name, symbols, interpretation direction, and advisory text together. The About and Privacy pages also explain the operating principles and purpose of the service in detail.</p>
                     </article>
@@ -316,7 +316,7 @@ const i18n = {
                 
                 <p><strong>2. 収集する個人情報の項目</strong><br>
                 - 必須項目：ユーザーが直接入力した悩みのテキスト<br>
-                本サービスは、氏名、メールアドレス、電話번호 등의 개인을 특정할 수 있는 정보를 일절 요구하지 않습니다.</p>
+                本サービスは、氏名、メールアドレス、電話番号などの個人を特定できる情報を一切要求しません。</p>
                 
                 <p><strong>3. 個人情報の保有および利用期間</strong><br>
                 入力された悩み内容は、占断結果が生成されユーザーに表示されている間のみセッション上で一時的に保持され、サービス利用終了時に直ちに破棄されます。サーバーに永久に保存されることはありません。</p>
