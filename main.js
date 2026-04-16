@@ -62,6 +62,28 @@ const i18n = {
                     </article>
                 </section>
         `,
+        publisherContent: `
+                <div class="content-grid">
+                    <article class="content-panel">
+                        <h2 id="publisher-content-title" class="section-title">이 사이트가 제공하는 읽을거리</h2>
+                        <p><strong>주역천재 멍선생</strong>은 단순히 버튼을 누르고 끝나는 운세 페이지가 아니라, 사용자가 자신의 고민을 문장으로 정리하고 주역 해석 콘텐츠를 읽으면서 현재 상황을 천천히 돌아볼 수 있도록 만든 해석형 콘텐츠 서비스입니다.</p>
+                        <p>홈 화면에서 질문을 입력하면 결과 페이지에서는 괘의 이름, 상징, 해석 방향, 조언 문장을 함께 제공합니다. 서비스 소개와 개인정보처리방침 페이지에도 운영 원칙과 이용 목적을 자세히 안내하고 있습니다.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">콘텐츠 운영 원칙</h3>
+                        <p>이 사이트의 게시자 콘텐츠는 자극적인 단정 대신 성찰과 해석 중심의 문장으로 구성됩니다. 건강, 법률, 투자처럼 신중함이 필요한 주제는 확정적으로 판단하지 않으며, 사용자가 현실의 정보와 함께 읽도록 안내합니다.</p>
+                        <p>또한 주역의 상징을 현대적인 언어로 풀어, 방문자가 재미 요소를 넘어서 실제로 읽고 생각해 볼 수 있는 본문 경험을 만드는 것을 핵심 목표로 삼고 있습니다.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">이용 흐름 안내</h3>
+                        <ol class="feature-list">
+                            <li>현재 가장 고민되는 상황을 구체적으로 적습니다.</li>
+                            <li>효를 하나씩 뽑으며 질문에 집중하는 시간을 가집니다.</li>
+                            <li>완성된 괘와 해석 문장을 읽고 자신의 상황과 비교해 봅니다.</li>
+                        </ol>
+                    </article>
+                </div>
+        `,
         privacyTitle: "개인정보처리방침",
         privacyContent: `
                 <p><strong>1. 개인정보의 수집 및 이용 목적</strong><br>
@@ -158,6 +180,28 @@ const i18n = {
                     </article>
                 </section>
         `,
+        publisherContent: `
+                <div class="content-grid">
+                    <article class="content-panel">
+                        <h2 id="publisher-content-title" class="section-title">What You Can Read on This Site</h2>
+                        <p><strong>Master Meng: I Ching Genius</strong> is not just a page where you press a button and leave. It is an interpretive content service designed to help visitors write down their concerns, read I Ching interpretations, and reflect on their present situation with more care.</p>
+                        <p>When a visitor enters a question on the home screen, the result page provides the hexagram name, symbols, interpretation direction, and advisory text together. The About and Privacy pages also explain the operating principles and purpose of the service in detail.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Editorial Principles</h3>
+                        <p>The publisher content on this site favors reflection and interpretation over sensational certainty. In subjects that require caution, such as health, law, or investment, it does not offer definitive conclusions and instead encourages visitors to read alongside real-world facts.</p>
+                        <p>We also aim to explain I Ching symbolism in modern language so that visitors have a genuine reading experience rather than only a brief interactive gimmick.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">How the Experience Works</h3>
+                        <ol class="feature-list">
+                            <li>Write the situation that concerns you as specifically as possible.</li>
+                            <li>Draw each line one by one and take a moment to focus on the question.</li>
+                            <li>Read the completed hexagram and compare its interpretation with your current circumstances.</li>
+                        </ol>
+                    </article>
+                </div>
+        `,
         privacyTitle: "Privacy Policy",
         privacyContent: `
                 <p><strong>1. Purpose of Collection and Use of Personal Information</strong><br>
@@ -242,6 +286,28 @@ const i18n = {
                         <p>私たちのサービスは、日常生活で直面するさまざまな悩みを、優しく温かい視点で見守ることを目指しています。単に未来を予言するだけでなく、64卦が持つ哲学的な洞察を通して、利用者が自分で答えを見つけるきっかけを届けたいと考えています。</p>
                     </article>
                 </section>
+        `,
+        publisherContent: `
+                <div class="content-grid">
+                    <article class="content-panel">
+                        <h2 id="publisher-content-title" class="section-title">このサイトで読める内容</h2>
+                        <p><strong>周易の天才 メン先生</strong>は、ボタンを押して終わるだけの占いページではありません。利用者が悩みを言葉にし、周易の解釈コンテンツを読みながら、今の状況を静かに見つめ直せるように設計された解釈型コンテンツサービスです。</p>
+                        <p>ホーム画面で質問を入力すると、結果画面では卦の名前、象徴、解釈の方向性、助言の文章を一緒に案内します。紹介ページとプライバシーページでも、運営方針とサービスの目的を詳しく説明しています。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">コンテンツ運営方針</h3>
+                        <p>このサイトの掲載コンテンツは、刺激的な断言よりも、内省と解釈を重視した文章で構成されています。健康、法律、投資のように慎重さが必要なテーマでは、断定的な結論を出さず、現実の情報とあわせて読むよう案内します。</p>
+                        <p>また、周易の象徴を現代の言葉でわかりやすく伝え、短い仕掛けで終わらない読みごたえのある本文体験を作ることを大切にしています。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">利用の流れ</h3>
+                        <ol class="feature-list">
+                            <li>今いちばん気になっている状況を、できるだけ具体的に書きます。</li>
+                            <li>爻を一つずつ引きながら、質問に意識を向ける時間を持ちます。</li>
+                            <li>完成した卦と解釈文を読み、今の状況と照らし合わせます。</li>
+                        </ol>
+                    </article>
+                </div>
         `,
         privacyTitle: "プライバシーポリシー",
         privacyContent: `
@@ -331,6 +397,28 @@ const i18n = {
                         <p>我们的服务希望以温暖亲切的视角，陪伴用户面对日常生活中的各种烦恼。除了预知意味之外，我们更重视借由六十四卦的哲学洞察，启发用户自己找到答案。</p>
                     </article>
                 </section>
+        `,
+        publisherContent: `
+                <div class="content-grid">
+                    <article class="content-panel">
+                        <h2 id="publisher-content-title" class="section-title">本网站提供的阅读内容</h2>
+                        <p><strong>孟老师，周易奇才</strong>并不是一个点一下按钮就结束的占卜页面，而是一项解读型内容服务，帮助访客把烦恼写成文字，阅读周易解读内容，并认真回看自己当下的处境。</p>
+                        <p>访客在首页输入问题后，结果页面会同时提供卦名、象征、解读方向和建议文字。关于页面与隐私页面也会详细说明网站的运营原则和服务目的。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">内容运营原则</h3>
+                        <p>本网站的发布内容更重视反思与解读，而不是刺激性的绝对断言。对于健康、法律、投资等需要谨慎判断的话题，网站不会给出武断结论，而是提醒访客结合现实信息一起阅读。</p>
+                        <p>我们也希望用现代语言解释周易象征，让访客获得真正可阅读的正文体验，而不只是一个短暂的互动小功能。</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">使用流程说明</h3>
+                        <ol class="feature-list">
+                            <li>尽量具体地写下你当前最在意的情况。</li>
+                            <li>逐条抽取爻线，并把注意力集中在问题本身。</li>
+                            <li>阅读完整卦象与解读文字，再与自己的现实情况慢慢对照。</li>
+                        </ol>
+                    </article>
+                </div>
         `,
         privacyTitle: "隐私政策",
         privacyContent: `
@@ -426,6 +514,28 @@ const i18n = {
                     </article>
                 </section>
         `,
+        publisherContent: `
+                <div class="content-grid">
+                    <article class="content-panel">
+                        <h2 id="publisher-content-title" class="section-title">Ce que l'on peut lire sur ce site</h2>
+                        <p><strong>Maître Meng, prodige du Yi Jing</strong> n'est pas seulement une page où l'on clique sur un bouton avant de repartir. C'est un service éditorial d'interprétation conçu pour aider les visiteurs à formuler leur préoccupation, lire un contenu inspiré du Yi Jing et réfléchir plus calmement à leur situation.</p>
+                        <p>Quand une question est saisie sur la page d'accueil, la page de résultat présente ensemble le nom de l'hexagramme, ses symboles, l'orientation de lecture et le texte de conseil. Les pages de présentation et de confidentialité détaillent aussi les principes du service.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Principes éditoriaux</h3>
+                        <p>Le contenu publié sur ce site privilégie la réflexion et l'interprétation plutôt que les certitudes sensationnalistes. Pour des sujets qui demandent de la prudence, comme la santé, le droit ou l'investissement, le site n'avance pas de conclusion définitive et invite à lire avec les faits concrets.</p>
+                        <p>Nous cherchons aussi à expliquer les symboles du Yi Jing dans une langue actuelle, afin d'offrir une vraie expérience de lecture et non un simple effet interactif de quelques secondes.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Déroulement de l'expérience</h3>
+                        <ol class="feature-list">
+                            <li>Décris aussi précisément que possible la situation qui t'occupe.</li>
+                            <li>Tire les lignes une par une en gardant ton attention sur la question.</li>
+                            <li>Lis l'hexagramme complet et compare son interprétation avec ta situation actuelle.</li>
+                        </ol>
+                    </article>
+                </div>
+        `,
         privacyTitle: "Politique de confidentialité",
         privacyContent: `
                 <p><strong>1. Finalité de la collecte et de l'utilisation</strong><br>
@@ -516,6 +626,28 @@ const i18n = {
                     </article>
                 </section>
         `,
+        publisherContent: `
+                <div class="content-grid">
+                    <article class="content-panel">
+                        <h2 id="publisher-content-title" class="section-title">Was man auf dieser Seite lesen kann</h2>
+                        <p><strong>Meister Meng, das Genie des I Ging</strong> ist nicht nur eine Seite, auf der man kurz einen Knopf drückt. Es ist ein interpretierender Inhaltsdienst, der Besuchern helfen soll, ihr Anliegen in Worte zu fassen, I-Ging-Deutungen zu lesen und die eigene Situation ruhiger zu betrachten.</p>
+                        <p>Wenn auf der Startseite eine Frage eingegeben wird, zeigt die Ergebnisansicht den Namen des Hexagramms, seine Symbole, die Deutungsrichtung und die Hinweise gemeinsam an. Auch die Seiten über den Dienst und zum Datenschutz erläutern die Grundsätze und den Zweck des Angebots.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Redaktionelle Grundsätze</h3>
+                        <p>Die veröffentlichten Inhalte setzen auf Reflexion und Deutung statt auf sensationelle Gewissheit. Bei Themen wie Gesundheit, Recht oder Investitionen, die Vorsicht verlangen, gibt die Seite keine endgültigen Urteile vor, sondern verweist auf die reale Sachlage.</p>
+                        <p>Außerdem erklären wir die Symbole des I Ging in moderner Sprache, damit Besucher echten Lesestoff erhalten und nicht nur einen kurzen interaktiven Effekt.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">So läuft die Nutzung ab</h3>
+                        <ol class="feature-list">
+                            <li>Schreibe möglichst konkret auf, was dich im Moment beschäftigt.</li>
+                            <li>Ziehe die Linien nacheinander und richte deine Aufmerksamkeit auf die Frage.</li>
+                            <li>Lies das vollständige Hexagramm und vergleiche die Deutung mit deiner aktuellen Lage.</li>
+                        </ol>
+                    </article>
+                </div>
+        `,
         privacyTitle: "Datenschutzerklärung",
         privacyContent: `
                 <p><strong>1. Zweck der Datenerhebung und Nutzung</strong><br>
@@ -605,6 +737,28 @@ const i18n = {
                         <p>Queremos mirar las preocupaciones cotidianas con una perspectiva cálida y cercana, e inspirar a cada persona para que encuentre sus propias respuestas a través de los hexagramas.</p>
                     </article>
                 </section>
+        `,
+        publisherContent: `
+                <div class="content-grid">
+                    <article class="content-panel">
+                        <h2 id="publisher-content-title" class="section-title">Qué se puede leer en este sitio</h2>
+                        <p><strong>Maestro Meng: genio del I Ching</strong> no es solo una página donde se pulsa un botón y termina todo. Es un servicio de contenido interpretativo pensado para que cada visitante escriba su inquietud, lea interpretaciones del I Ching y observe su situación con más calma.</p>
+                        <p>Cuando una persona introduce una pregunta en la pantalla principal, la página de resultado muestra el nombre del hexagrama, sus símbolos, la dirección de la interpretación y el texto de consejo. Las páginas de información y privacidad también explican con detalle los principios y el propósito del servicio.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Principios editoriales</h3>
+                        <p>El contenido publicado en este sitio prioriza la reflexión y la interpretación por encima de las afirmaciones sensacionalistas. En temas como salud, derecho o inversión, que requieren cautela, no ofrece conclusiones definitivas y anima a leer junto con los hechos reales.</p>
+                        <p>También buscamos explicar los símbolos del I Ching con lenguaje actual para que la experiencia sea una lectura real y no solo un efecto interactivo pasajero.</p>
+                    </article>
+                    <article class="content-panel">
+                        <h3 class="section-title">Cómo funciona la experiencia</h3>
+                        <ol class="feature-list">
+                            <li>Escribe con el mayor detalle posible la situación que más te preocupa.</li>
+                            <li>Saca las líneas una por una y mantén la atención puesta en la pregunta.</li>
+                            <li>Lee el hexagrama completo y compara la interpretación con tu situación actual.</li>
+                        </ol>
+                    </article>
+                </div>
         `,
         privacyTitle: "Política de privacidad",
         privacyContent: `
@@ -717,7 +871,7 @@ const ADSENSE_CLIENT_ID = 'ca-pub-3074209859520017';
 // Select elements
 let titleEl, subtitleEl, labelConcernEl, concernInputEl, startButtonEl, retryButtonEl, disclaimerTextEl, footerCopyEl;
 let footerNoteEl;
-let navHomeEl, navAboutEl, navPrivacyEl, aboutTitleEl, privacyTitleEl, aboutContentEl, privacyContentEl;
+let navHomeEl, navAboutEl, navPrivacyEl, aboutTitleEl, privacyTitleEl, aboutContentEl, privacyContentEl, publisherContentEl;
 let visitorCounterEl, visitorCounterLabelEl, visitorCounterValueEl;
 let backHomeButtons;
 
@@ -770,6 +924,7 @@ function updateUI() {
     if (aboutTitleEl) aboutTitleEl.textContent = t.aboutTitle;
     if (privacyTitleEl) privacyTitleEl.textContent = t.privacyTitle;
     if (aboutContentEl) aboutContentEl.innerHTML = t.aboutContent;
+    if (publisherContentEl && t.publisherContent) publisherContentEl.innerHTML = t.publisherContent;
     if (privacyContentEl) privacyContentEl.innerHTML = t.privacyContent;
 
     updateVisitorCounterUI();
@@ -870,6 +1025,7 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutTitleEl = document.getElementById('about-title');
     privacyTitleEl = document.getElementById('privacy-title');
     aboutContentEl = document.getElementById('about-content');
+    publisherContentEl = document.getElementById('publisher-content');
     privacyContentEl = document.getElementById('privacy-content');
     visitorCounterEl = document.getElementById('visitor-counter');
     visitorCounterLabelEl = document.getElementById('visitor-counter-label');
