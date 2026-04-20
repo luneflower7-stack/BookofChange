@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bookofchange-71fed.web.app/sitemap.xml

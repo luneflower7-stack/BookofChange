@@ -1,0 +1,128 @@
+[debug] [2026-04-17T17:48:38.069Z] ----------------------------------------------------------------------
+[debug] [2026-04-17T17:48:38.071Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only functions
+[debug] [2026-04-17T17:48:38.072Z] CLI Version:   15.1.0
+[debug] [2026-04-17T17:48:38.072Z] Platform:      linux
+[debug] [2026-04-17T17:48:38.072Z] Node Version:  v20.19.1
+[debug] [2026-04-17T17:48:38.072Z] Time:          Fri Apr 17 2026 17:48:38 GMT+0000 (Coordinated Universal Time)
+[debug] [2026-04-17T17:48:38.072Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-17T17:48:41.228Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:41.228Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:41.232Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/bookofchange-85852702 [none]
+[debug] [2026-04-17T17:48:42.281Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/bookofchange-85852702 200
+[debug] [2026-04-17T17:48:42.281Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/bookofchange-85852702 {"workspaceId":"bookofchange-85852702","name":"BookofChange","workspaceRedirectUrl":"firebase-bookofchange-1775313439973.cluster-yylgzpipxrar4v4a72liastuqy.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2026-04-17T17:33:26.276485Z","workspaceTemplate":"WORKSPACE_TEMPLATE_BLANK_WEB","owner":"SELF","serviceAccountEmail":"msp-7584858272566802817@monospace-per-ws-sa-1.iam.gserviceaccount.com","enableNix":true,"ownerEmail":"luneflower7@gmail.com","workspaceImageUrl":"https://www.gstatic.com/monospace/231115/logo_html.svg","templateArgs":"{\"__agentic_workspace\":true}","templateRepoUrl":"file:///usr/local/monospace/templates/public/blank-web","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2UtYm9va29mY2hhbmdlLTE3NzUzMTM0Mzk5NzMuY2x1c3Rlci15eWxnenBpcHhyYXI0djRhNzJsaWFzdHVxeS5jbG91ZHdvcmtzdGF0aW9ucy5kZXYiLCJpYXQiOjE3NzY0NDgxMjIsImV4cCI6MTc3NjUzNDUyMn0.NLfTgM-wbzjRs6ZbjLftI0Ie9_5vQ6DYOB3wFmpb0Udh9L11DjpRNqxAXTxvDRqG8tO5D1lWHTSBfpq7l1SHPcBPF-Ir4pDOm7CyFtG-bsXXy2Odsq_2DadhABoFT1nAo_wIdRCIBsdMG-tlF9WAfr7IjWXLvEEtAVKY0zven0bnYM58tXGRDDC47KiOrJDXVZuVlPWtUUVpG27mVt9xACIdcjJYtfORxGf0CRX78f-ztcJ5P6_ewVaKQNnjOPXuGH6IFi9Oj8XxrMl673ILSThs_gvJskeCkRMSyn_6Y4uaFepve1XCc45Bm1a8wC0OgR4nKZOvkQY6zLDS5TWgQQ","firebaseProjectId":"bookofchange-71fed"}
+[debug] [2026-04-17T17:48:42.283Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-04-17T17:48:42.284Z] > authorizing via signed-in user (luneflower7@gmail.com)
+[debug] [2026-04-17T17:48:42.284Z] [iam] checking project bookofchange-71fed for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2026-04-17T17:48:42.285Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:42.285Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:42.285Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/bookofchange-71fed:testIamPermissions [none]
+[debug] [2026-04-17T17:48:42.285Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/bookofchange-71fed:testIamPermissions x-goog-quota-user=projects/bookofchange-71fed
+[debug] [2026-04-17T17:48:42.285Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/bookofchange-71fed:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-04-17T17:48:43.079Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/bookofchange-71fed:testIamPermissions 200
+[debug] [2026-04-17T17:48:43.079Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/bookofchange-71fed:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-04-17T17:48:43.080Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:43.080Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:43.080Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/bookofchange-71fed/serviceAccounts/bookofchange-71fed@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-04-17T17:48:43.080Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/bookofchange-71fed/serviceAccounts/bookofchange-71fed@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-04-17T17:48:44.193Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/bookofchange-71fed/serviceAccounts/bookofchange-71fed@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-04-17T17:48:44.193Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/bookofchange-71fed/serviceAccounts/bookofchange-71fed@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'bookofchange-71fed'...
+[info] 
+[info] i  deploying functions 
+[debug] [2026-04-17T17:48:44.199Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:44.199Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:44.200Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/bookofchange-71fed [none]
+[debug] [2026-04-17T17:48:44.413Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/bookofchange-71fed 200
+[debug] [2026-04-17T17:48:44.413Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/bookofchange-71fed {"projectNumber":"320465834087","projectId":"bookofchange-71fed","lifecycleState":"ACTIVE","name":"Bookofchange","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-04-04T18:20:54.512Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-04-17T17:48:44.417Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:44.417Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:44.417Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bookofchange-71fed/adminSdkConfig [none]
+[debug] [2026-04-17T17:48:44.714Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bookofchange-71fed/adminSdkConfig 200
+[debug] [2026-04-17T17:48:44.714Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bookofchange-71fed/adminSdkConfig {"projectId":"bookofchange-71fed","storageBucket":"bookofchange-71fed.firebasestorage.app"}
+[debug] [2026-04-17T17:48:44.715Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:44.715Z] Checked if tokens are valid: true, expires at: 1776450848156
+[debug] [2026-04-17T17:48:44.715Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/bookofchange-71fed/configs [none]
+[debug] [2026-04-17T17:48:45.002Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/bookofchange-71fed/configs 200
+[debug] [2026-04-17T17:48:45.002Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/bookofchange-71fed/configs {}
+[debug] [2026-04-17T17:48:45.004Z] Validating nodejs source
+[warn] ⚠  functions: Couldn't find firebase-functions package in your source code. Have you run 'npm install'? 
+[debug] [2026-04-17T17:48:45.005Z] getFunctionsSDKVersion encountered error:Cannot find module 'firebase-functions'
+Require stack:
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/versioning.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/prepare.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorShared.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/frameworks/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/hosting/prepare.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/hosting/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/commands/deploy.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/commands/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/bin/cli.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/bin/firebase.js {"code":"MODULE_NOT_FOUND","requireStack":["/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/versioning.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/index.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/index.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/prepare.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorShared.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/frameworks/index.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/hosting/prepare.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/hosting/index.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/index.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/commands/deploy.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/commands/index.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/index.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/bin/cli.js","/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/bin/firebase.js"]}
+[debug] [2026-04-17T17:48:45.006Z] checkFunctionsSDKVersion encountered error:Invalid Version:  {}
+[debug] [2026-04-17T17:48:45.006Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "firebase-admin": "^13.7.0",
+    "firebase-functions": "^6.6.0",
+    "node-fetch": "^2.7.0",
+    "openai": "^4.104.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2026-04-17T17:48:45.006Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-04-17T17:48:45.010Z] Could not parse firebase-functions version '' into semver.
+[debug] [2026-04-17T17:48:45.011Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-04-17T17:48:45.035Z] Error: Cannot find module 'firebase-functions'
+Require stack:
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/prepare.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorShared.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/frameworks/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/hosting/prepare.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/hosting/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/commands/deploy.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/commands/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/index.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/bin/cli.js
+- /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/bin/firebase.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Function.resolve (node:internal/modules/helpers:193:19)
+    at Delegate.findFunctionsBinary (/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/index.js:101:33)
+    at Delegate.spawnFunctionsProcess (/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/index.js:125:30)
+    at Delegate.serveAdmin (/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/index.js:143:35)
+    at Delegate.discoverBuild (/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/runtimes/node/index.js:183:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async loadCodebases (/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/prepare.js:324:33)
+    at async prepare (/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/functions/prepare.js:66:24)
+    at async chain (/nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/deploy/index.js:43:9)
+[error] 
+[error] Error: An unexpected error has occurred.
