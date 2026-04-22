@@ -1,3 +1,5 @@
+import { buildGuideHTML, getGuideLocale } from "./guide-content.mjs";
+
 // --- (0) Internationalization Data ---
 const i18n = {
     ko: {
@@ -17,9 +19,14 @@ const i18n = {
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `네가 뽑은 운세는 하괘 **${lower}**와 상괘 **${upper}**이 만난 조합이야. ${lowerDesc}의 기운 위에 ${upperDesc}의 흐름이 더해진 아주 특별한 상황이지.`,
         defaultHexName: "신비로운 괘",
         navHome: "홈",
+        navGuide: "64괘 해설",
         navAbout: "소개",
         navPrivacy: "개인정보처리방침",
         navContact: "문의",
+        guidePreviewEyebrow: "I Ching Library",
+        guidePreviewTitle: "64괘를 한눈에 읽는 해설 라이브러리",
+        guidePreviewDescription: "홈 화면의 운세 체험과 별도로, 각 괘의 핵심 의미와 현실적인 조언을 정리한 긴 읽을거리 화면을 제공합니다.",
+        openGuideButton: "64괘 해설 보러 가기",
         visitorLabel: "방문자",
         visitorLoading: "불러오는 중...",
         aboutTitle: "주역천재 멍선생 소개",
@@ -100,9 +107,14 @@ const i18n = {
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `Your fortune is a mix of **${lower}** below and **${upper}** above. It represents ${upperDesc} flowing over ${lowerDesc}.`,
         defaultHexName: "Mystical Hexagram",
         navHome: "Home",
+        navGuide: "64 Hexagrams",
         navAbout: "About",
         navPrivacy: "Privacy",
         navContact: "Contact",
+        guidePreviewEyebrow: "I Ching Library",
+        guidePreviewTitle: "A practical library for all 64 hexagrams",
+        guidePreviewDescription: "Beyond the fortune interaction on the home screen, this site includes a long-form reading page that explains each hexagram in plain language.",
+        openGuideButton: "Open the 64-hexagram guide",
         visitorLabel: "Visitors",
         visitorLoading: "Loading...",
         aboutTitle: "About Master Meng: I Ching Genius",
@@ -183,9 +195,14 @@ const i18n = {
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `あなたが引いた運勢は、下卦の**${lower}**と上卦の**${upper}**が合わさった組み合わせだよ。`,
         defaultHexName: "神秘的な卦",
         navHome: "ホーム",
+        navGuide: "64卦ガイド",
         navAbout: "紹介",
         navPrivacy: "プライバシー",
         navContact: "お問い合わせ",
+        guidePreviewEyebrow: "I Ching Library",
+        guidePreviewTitle: "64卦をまとめて読める解説ライブラリ",
+        guidePreviewDescription: "ホームの占い体験とは別に、各卦の意味と現実的な助言を整理した長文コンテンツ画面を用意しています。",
+        openGuideButton: "64卦ガイドを見る",
         visitorLabel: "訪問者",
         visitorLoading: "読み込み中...",
         aboutTitle: "周易の天才 メン先生について",
@@ -266,9 +283,14 @@ const i18n = {
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `你抽到的运势是下卦 **${lower}** 和上卦 **${upper}** 的组合。`,
         defaultHexName: "神秘的卦象",
         navHome: "首页",
+        navGuide: "64卦解读",
         navAbout: "关于",
         navPrivacy: "隐私",
         navContact: "联系我们",
+        guidePreviewEyebrow: "I Ching Library",
+        guidePreviewTitle: "一次读懂64卦的内容库",
+        guidePreviewDescription: "除了首页的占卜互动外，网站还提供一整页长篇内容，用现代语言解释每一卦的重点与建议。",
+        openGuideButton: "查看64卦解读",
         visitorLabel: "访客",
         visitorLoading: "加载中...",
         aboutTitle: "关于孟老师，周易奇才",
@@ -349,9 +371,14 @@ const i18n = {
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `Le tirage unit le trigramme inférieur **${lower}** et le trigramme supérieur **${upper}**. Il montre ${upperDesc} qui se déploie au-dessus de ${lowerDesc}.`,
         defaultHexName: "Hexagramme mystérieux",
         navHome: "Accueil",
+        navGuide: "64 hexagrammes",
         navAbout: "À propos",
         navPrivacy: "Confidentialité",
         navContact: "Contactez-nous",
+        guidePreviewEyebrow: "I Ching Library",
+        guidePreviewTitle: "Une bibliothèque claire des 64 hexagrammes",
+        guidePreviewDescription: "En plus de l'expérience interactive de la page d'accueil, le site propose une longue page de lecture qui explique chaque hexagramme dans un langage simple.",
+        openGuideButton: "Ouvrir le guide des 64 hexagrammes",
         visitorLabel: "Visiteurs",
         visitorLoading: "Chargement...",
         aboutTitle: "À propos de Maître Meng, prodige du Yi Jing",
@@ -432,9 +459,14 @@ const i18n = {
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `Dein Zeichen verbindet das untere Trigramm **${lower}** mit dem oberen Trigramm **${upper}**. Es zeigt ${upperDesc}, das sich über ${lowerDesc} entfaltet.`,
         defaultHexName: "Geheimnisvolles Hexagramm",
         navHome: "Start",
+        navGuide: "64 Hexagramme",
         navAbout: "Über uns",
         navPrivacy: "Datenschutz",
         navContact: "Kontakt",
+        guidePreviewEyebrow: "I Ching Library",
+        guidePreviewTitle: "Eine gut lesbare Bibliothek zu allen 64 Hexagrammen",
+        guidePreviewDescription: "Zusätzlich zur Deutung auf der Startseite gibt es eine ausführliche Leseseite, die jedes Hexagramm in klarer moderner Sprache erklärt.",
+        openGuideButton: "64-Hexagramm-Guide öffnen",
         visitorLabel: "Besucher",
         visitorLoading: "Laden...",
         aboutTitle: "Über Meister Meng, das Genie des I Ging",
@@ -515,9 +547,14 @@ const i18n = {
         interactionTemplate: (lower, upper, lowerDesc, upperDesc) => `Tu lectura une el trigrama inferior **${lower}** con el trigrama superior **${upper}**. Muestra ${upperDesc} desplegándose sobre ${lowerDesc}.`,
         defaultHexName: "Hexagramma misterioso",
         navHome: "Inicio",
+        navGuide: "64 hexagramas",
         navAbout: "Información",
         navPrivacy: "Privacidad",
         navContact: "Contáctanos",
+        guidePreviewEyebrow: "I Ching Library",
+        guidePreviewTitle: "Una biblioteca clara de los 64 hexagramas",
+        guidePreviewDescription: "Además de la experiencia interactiva de la portada, el sitio ofrece una página extensa que explica cada hexagrama en lenguaje actual.",
+        openGuideButton: "Abrir la guía de los 64 hexagramas",
         visitorLabel: "Visitantes",
         visitorLoading: "Cargando...",
         aboutTitle: "Sobre Maestro Meng: genio del I Ching",
@@ -657,9 +694,10 @@ const ADSENSE_CLIENT_ID = 'ca-pub-3074209859520017';
 // Select elements
 let titleEl, subtitleEl, labelConcernEl, concernInputEl, startButtonEl, retryButtonEl, disclaimerTextEl, footerCopyEl;
 let footerNoteEl;
-let navHomeEl, navAboutEl, navPrivacyEl, navContactEl, aboutTitleEl, privacyTitleEl, contactTitleEl, aboutContentEl, privacyContentEl, contactContentEl, publisherContentEl;
+let navHomeEl, navGuideEl, navAboutEl, navPrivacyEl, navContactEl, aboutTitleEl, privacyTitleEl, contactTitleEl, guideTitleEl, aboutContentEl, privacyContentEl, contactContentEl, publisherContentEl, guideContentEl;
 let visitorCounterEl, visitorCounterLabelEl, visitorCounterValueEl;
 let backHomeButtons;
+let guidePreviewEyebrowEl, guidePreviewTitleEl, guidePreviewDescriptionEl, openGuideButtonEl;
 
 function hasPublisherContent() {
     const mainContainer = document.getElementById('main-container');
@@ -705,19 +743,27 @@ function updateUI() {
     if (footerNoteEl && t.footerNote) footerNoteEl.textContent = t.footerNote;
 
     if (navHomeEl) navHomeEl.textContent = t.navHome;
+    if (navGuideEl) navGuideEl.textContent = t.navGuide;
     if (navAboutEl) navAboutEl.textContent = t.navAbout;
     if (navPrivacyEl) navPrivacyEl.textContent = t.navPrivacy;
     if (navContactEl) navContactEl.textContent = t.navContact;
+    if (guidePreviewEyebrowEl) guidePreviewEyebrowEl.textContent = t.guidePreviewEyebrow;
+    if (guidePreviewTitleEl) guidePreviewTitleEl.textContent = t.guidePreviewTitle;
+    if (guidePreviewDescriptionEl) guidePreviewDescriptionEl.textContent = t.guidePreviewDescription;
+    if (openGuideButtonEl) openGuideButtonEl.textContent = t.openGuideButton;
     if (aboutTitleEl) aboutTitleEl.textContent = t.aboutTitle;
     if (privacyTitleEl) privacyTitleEl.textContent = t.privacyTitle;
     if (contactTitleEl) contactTitleEl.textContent = t.contactTitle;
+    if (guideTitleEl) guideTitleEl.textContent = getGuideLocale(currentLang).title;
     if (aboutContentEl) aboutContentEl.innerHTML = t.aboutContent;
     if (publisherContentEl && t.publisherContent) publisherContentEl.innerHTML = t.publisherContent;
+    if (guideContentEl) guideContentEl.innerHTML = buildGuideHTML(currentLang);
     if (privacyContentEl) privacyContentEl.innerHTML = t.privacyContent;
     if (contactContentEl) contactContentEl.innerHTML = t.contactContent;
 
     // Update Footer Navigation Text
     document.querySelectorAll('.footer-nav-home').forEach(el => el.textContent = t.navHome);
+    document.querySelectorAll('.footer-nav-guide').forEach(el => el.textContent = t.navGuide);
     document.querySelectorAll('.footer-nav-about').forEach(el => el.textContent = t.navAbout);
     document.querySelectorAll('.footer-nav-privacy').forEach(el => el.textContent = t.navPrivacy);
     document.querySelectorAll('.footer-nav-contact').forEach(el => el.textContent = t.navContact);
@@ -815,19 +861,26 @@ document.addEventListener('DOMContentLoaded', () => {
     footerNoteEl = document.getElementById('footer-note');
 
     navHomeEl = document.getElementById('nav-home');
+    navGuideEl = document.getElementById('nav-guide');
     navAboutEl = document.getElementById('nav-about');
     navPrivacyEl = document.getElementById('nav-privacy');
     navContactEl = document.getElementById('nav-contact');
+    guideTitleEl = document.getElementById('guide-title');
     aboutTitleEl = document.getElementById('about-title');
     privacyTitleEl = document.getElementById('privacy-title');
     contactTitleEl = document.getElementById('contact-title');
     aboutContentEl = document.getElementById('about-content');
     publisherContentEl = document.getElementById('publisher-content');
+    guideContentEl = document.getElementById('guide-content');
     privacyContentEl = document.getElementById('privacy-content');
     contactContentEl = document.getElementById('contact-content');
     visitorCounterEl = document.getElementById('visitor-counter');
     visitorCounterLabelEl = document.getElementById('visitor-counter-label');
     visitorCounterValueEl = document.getElementById('visitor-counter-value');
+    guidePreviewEyebrowEl = document.getElementById('guide-preview-eyebrow');
+    guidePreviewTitleEl = document.getElementById('guide-preview-title');
+    guidePreviewDescriptionEl = document.getElementById('guide-preview-description');
+    openGuideButtonEl = document.getElementById('open-guide-button');
     backHomeButtons = document.querySelectorAll('.back-home-button');
 
     // Browser language detection
@@ -854,12 +907,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navigation
     if (navHomeEl) navHomeEl.addEventListener('click', (e) => { e.preventDefault(); showView('home-view'); });
+    if (navGuideEl) navGuideEl.addEventListener('click', (e) => { e.preventDefault(); showView('guide-view'); });
     if (navAboutEl) navAboutEl.addEventListener('click', (e) => { e.preventDefault(); showView('about-view'); });
     if (navPrivacyEl) navPrivacyEl.addEventListener('click', (e) => { e.preventDefault(); showView('privacy-view'); });
     if (navContactEl) navContactEl.addEventListener('click', (e) => { e.preventDefault(); showView('contact-view'); });
+    if (openGuideButtonEl) openGuideButtonEl.addEventListener('click', () => showView('guide-view'));
     
     // Footer Navigation
     document.querySelectorAll('.footer-nav-home').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showView('home-view'); }));
+    document.querySelectorAll('.footer-nav-guide').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showView('guide-view'); }));
     document.querySelectorAll('.footer-nav-about').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showView('about-view'); }));
     document.querySelectorAll('.footer-nav-privacy').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showView('privacy-view'); }));
     document.querySelectorAll('.footer-nav-contact').forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); showView('contact-view'); }));

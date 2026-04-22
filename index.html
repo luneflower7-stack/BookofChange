@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-3074209859520017">
+    <meta name="description" content="주역 64괘를 현대어로 쉽게 풀어 설명하고, 질문 기반 운세 해석과 함께 읽을거리를 제공하는 사이트입니다.">
     <title>주역천재 멍선생 🐶</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,6 +13,7 @@
         <div class="nav-container">
             <div class="nav-links">
                 <a href="#" id="nav-home">홈</a>
+                <a href="#" id="nav-guide">64괘 해설</a>
                 <a href="#" id="nav-about">소개</a>
                 <a href="#" id="nav-privacy">개인정보처리방침</a>
             </div>
@@ -98,7 +100,26 @@
                         </article>
                     </div>
                 </section>
+
+                <section id="home-guide-preview" class="guide-preview" aria-labelledby="guide-preview-title">
+                    <div class="content-panel guide-preview-panel">
+                        <p id="guide-preview-eyebrow" class="guide-eyebrow">I Ching Library</p>
+                        <h2 id="guide-preview-title" class="section-title">64괘를 한눈에 읽는 해설 라이브러리</h2>
+                        <p id="guide-preview-description">광고만 보이는 인상을 줄이지 않도록, 이 사이트에는 각 괘의 핵심 의미와 현실적인 조언을 정리한 긴 읽을거리 화면을 함께 제공합니다.</p>
+                        <div class="button-container compact-button-row">
+                            <button id="open-guide-button" type="button">64괘 해설 보러 가기</button>
+                        </div>
+                    </div>
+                </section>
             </main>
+        </div>
+
+        <div id="guide-view" class="view hidden">
+            <h2 id="guide-title">주역 64괘 현대어 해설</h2>
+            <div id="guide-content" class="guide-library"></div>
+            <div class="button-container">
+                <button class="back-home-button">🐾 홈으로 돌아가기 🐾</button>
+            </div>
         </div>
 
         <!-- About View -->
@@ -154,6 +175,7 @@
         <footer class="disclaimer">
             <div class="footer-nav">
                 <a href="#" class="footer-nav-home">홈</a> | 
+                <a href="#" class="footer-nav-guide">64괘 해설</a> | 
                 <a href="#" class="footer-nav-about">소개</a> | 
                 <a href="#" class="footer-nav-privacy">개인정보처리방침</a> | 
                 <a href="#" class="footer-nav-contact">문의</a>
@@ -166,6 +188,6 @@
         </footer>
     </div>
 
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
